@@ -1,11 +1,11 @@
 import React from 'react';
 import { Navbar, Nav, Container } from 'react-bootstrap';
 
-function AppNavbar() {
+export default function AppNavbar() {
   return (
-    <Navbar bg="dark" variant="dark" expand="lg">
+    <Navbar bg="secondary" variant="dark" expand="lg" className='m-0'>
       <Container>
-        <Navbar.Brand href="#home">Matlingiewicz dev</Navbar.Brand>
+        <Navbar.Brand href="#home"><h2>Matlingiewicz dev</h2></Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
@@ -18,5 +18,3 @@ function AppNavbar() {
     </Navbar>
   );
 }
-
-export default AppNavbar;

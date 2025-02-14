@@ -1,0 +1,12 @@
+// Definiujemy nowe wartości kolorów
+$primary: #0d6efd;
+$secondary: #0A0C10;
+$success: #198754;
+$danger: #dc3545;
+$warning: #ffc107;
+$info: #0dcaf0;
+$light: #f8f9fa;
+$dark: #121821;
+
+// Importujemy Bootstrapa po nadpisaniu zmiennych
+@import "bootstrap/scss/bootstrap";
