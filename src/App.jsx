@@ -5,13 +5,14 @@ import Skills from './components/Skills';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import MoreInfo from './components/MoreInfo';
 // import './App.css'
 
 function App() {
   return (
     <>
       <AppNavbar />
-      <Container className="bg-dark text-light mt-3">        
+      <Container className="bg-dark text-light mt-3">
         <Row>
           <Col>
             <h2>O mnie</h2>
@@ -30,7 +31,11 @@ function App() {
         </Row>
         <Row>
           <h2>Umiejętności</h2>
-          <Skills/>
+          <Skills />
+        </Row>
+        <Row>
+            <MoreInfo title="Inne umiejętności" infoList={["Github - podstawowa znajomość serwisu i związanych z nim poleceń w konsoli (add, commit, push, pull)", "Angielski - znajomość języka na poziomie B2", "Photoshop - podstawowa znajomość programu i umiejętność modyfikowania grafiki"]} />
+            <MoreInfo title="Kursy i certyfikaty" infoList={["PCAP: Programming Essentials in Python", "Udemy: React – Complete Guide 2025(Academind) (w trakcie)", "Udemy: Zaawansowane projekty w CSS i JavaScript (Samuraj Programowania)"]} />
         </Row>
       </Container>
     </>
