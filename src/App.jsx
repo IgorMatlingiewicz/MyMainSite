@@ -3,9 +3,11 @@ import AppNavbar from './components/Navbar';
 import Education from './components/Education';
 import Skills from './components/Skills';
 import Container from 'react-bootstrap/Container';
+import Contact from './components/Contact';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import MoreInfo from './components/MoreInfo';
+
 // import './App.css'
 
 function App() {
@@ -13,7 +15,7 @@ function App() {
     <>
       <AppNavbar />
       <Container className="bg-dark text-light mt-3">
-        <Row>
+        <Row id='home'>
           <Col>
             <h2>O mnie</h2>
             <p>Jestem ambitną, młodą osobą chętną nanabycie nowej wiedzy i doświadczenia wbranży IT. Programowaniem i tworzeniem stron zainteresowałem się na początku technikum i od tej pory uczę się nowych rzeczy i technologii, robiąc przy tym małe projekty i strony. Posiadam tytuł technika z informatyki i aktualnie studiuje informatykę na Politechnice Śląskiej. Szukam pracy, w której rozwinę swoje umiejętności i nabędę też nowe z pomocą bardziej doświadczonych ludzi. Dotychczas najwięcej pracowałem we frontendzie, zrobiłem kilka do dziś aktywnych stron, ale chciałbym się również rozwinąć w obszarze backendu, głównie w języku Python.</p>
@@ -21,21 +23,20 @@ function App() {
           </Col>
           <Col>
             <h2>Edukacja</h2>
-            <ul>
-              <Education place="Politechnika Śląska w Gliwicach (2023 – obecnie)" fieldOfStudy="Informatyka" />
-              <Education place="Techniczne Zakłady Naukowe w Częstochowie (2019-2023)" fieldOfStudy="Technik Informatyk" />
-              <Education place="EduPlus – dwutygodniowe praktyki z Erasmus+" fieldOfStudy="Praktyki podczas których programowałem aplikacje w technologii Windows Forms w anglojęzycznym zespole" />
-              <Education place="Jupiter – szkoła frontendu i tworzenia gier (2021-2023)" fieldOfStudy="Zajęcia z tworzenia stron internetowych" />
-            </ul>
+            <Education/>
           </Col>
         </Row>
-        <Row>
+        <Row id='skills' className='my-3'>
           <h2>Umiejętności</h2>
           <Skills />
         </Row>
-        <Row>
+        <Row className='my-3'>
             <MoreInfo title="Inne umiejętności" infoList={["Github - podstawowa znajomość serwisu i związanych z nim poleceń w konsoli (add, commit, push, pull)", "Angielski - znajomość języka na poziomie B2", "Photoshop - podstawowa znajomość programu i umiejętność modyfikowania grafiki"]} />
             <MoreInfo title="Kursy i certyfikaty" infoList={["PCAP: Programming Essentials in Python", "Udemy: React – Complete Guide 2025(Academind) (w trakcie)", "Udemy: Zaawansowane projekty w CSS i JavaScript (Samuraj Programowania)"]} />
+        </Row>
+        <Row id="contact" className='my-3'>
+          <h2>Kontakt</h2>
+          <Contact/>
         </Row>
       </Container>
     </>

@@ -8,5 +8,16 @@ $info: #0dcaf0;
 $light: #f8f9fa;
 $dark: #121821;
 
+/* Opcjonalne style dla kontenera slajdów */
+.carousel-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 190px; /* Wysokość slajdu */
+  text-align: center;
+}
+
+
 // Importujemy Bootstrapa po nadpisaniu zmiennych
 @import "bootstrap/scss/bootstrap";

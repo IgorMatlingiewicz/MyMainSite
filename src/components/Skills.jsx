@@ -20,18 +20,15 @@ export default function Skills({ }) {
 
     return (
         <>
-            <Container>
+            <Container className='my-3'>
                 <Row>
-                    <Col className='text-center'>
-                        <Button onClick={() => handleClick("F")}>Frontend</Button>
-                    </Col>
-                    <Col className='text-center'>
-                        <Button onClick={() => handleClick("B")}>Backend</Button>
+                    <Col className='d-flex justify-content-center'>
+                        <Button className="mx-5"onClick={() => handleClick("F")}>Frontend</Button>
+                        <Button className="mx-5"onClick={() => handleClick("B")}>Backend</Button>
                     </Col>
                 </Row>
-
             </Container>
-            <h1 className='text-center'>{field}</h1>
+            <h1 className='text-center my-3'>{field}</h1>
             <Container>
                 <Row>
                     <Col>
@@ -45,7 +42,7 @@ export default function Skills({ }) {
                     </Col>
                 </Row>
                 <Row>
-                    <h2 className='text-center'>React</h2>
+                    <h2 className='text-center my-3'>React</h2>
                     <Col>
                         <Skill title="React" description="Praca z biblioteką React, tworzenie komponentów funkcyjnych, modułowe pisane kodu, znajomość JSX. Dla przykładu ta strona jest stworzona w tej właśnie bibliotece. Do jej stylowania użyłem biblioteki React-Bootstrap, która pozwala użyć gotowych komnonetów Reacta posiadających już style standardowego Bootstrapa. Do jej stworzenia użyłem również narzędzia Vite." />
                     </Col>
