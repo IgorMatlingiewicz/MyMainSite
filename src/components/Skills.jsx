@@ -5,13 +5,13 @@ import Col from 'react-bootstrap/Col';
 import Skill from './Skill';
 import { useState } from 'react'
 
-import logoCSS from '../../src/assets/CSS.svg'
-import logoCPP from '../../src/assets/CPP.svg'
-import logoHtml from '../../src/assets/HTML.svg'
-import logoPython from '../../src/assets/Python.svg'
-import logoJS from '../../src/assets/JS.svg'
-import logoSQL from '../../src/assets/SQL.svg'
-import logoReact from '../../src/assets/React.svg'
+import logoCSS from '../assets/CSS.svg'
+import logoCPP from '../assets/CPP.svg'
+import logoHtml from '../assets/HTML.svg'
+import logoPython from '../assets/Python.svg'
+import logoJS from '../assets/JS.svg'
+import logoSQL from '../assets/SQL.svg'
+import logoReact from '../assets/React.svg'
 
 export default function Skills({ }) {
 
