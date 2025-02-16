@@ -11,7 +11,7 @@ import logoHtml from '../assets/HTML.svg'
 import logoPython from '../assets/Python.svg'
 import logoJS from '../assets/JS.svg'
 import logoSQL from '../assets/SQL.svg'
-import logoReact from '../assets/React.svg'
+import logoReact from '/assets/React.svg'
 
 export default function Skills({ }) {
 
