@@ -14,10 +14,13 @@ $dark: #121821;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 190px; /* Wysokość slajdu */
   text-align: center;
-}
+  height: 200px; /* Wysokość slajdu */
 
+  @media (max-width: 300px) {
+    height: 250px; /* Wyższa wysokość dla mniejszych ekranów */
+  }
+}
 
 // Importujemy Bootstrapa po nadpisaniu zmiennych
 @import "bootstrap/scss/bootstrap";

@@ -2,7 +2,6 @@ import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Card from 'react-bootstrap/Card';
 import Skill from './Skill';
 import { useState } from 'react'
 
@@ -23,22 +22,22 @@ export default function Skills({ }) {
             <Container className='my-3'>
                 <Row>
                     <Col className='d-flex justify-content-center'>
-                        <Button className="mx-5"onClick={() => handleClick("F")}>Frontend</Button>
-                        <Button className="mx-5"onClick={() => handleClick("B")}>Backend</Button>
+                        <Button className="mx-5" onClick={() => handleClick("F")}>Frontend</Button>
+                        <Button className="mx-5" onClick={() => handleClick("B")}>Backend</Button>
                     </Col>
                 </Row>
             </Container>
             <h1 className='text-center my-3'>{field}</h1>
             <Container>
-                <Row>
-                    <Col>
-                        <Skill title={field == "Frontend" ? "CSS" : "C++"} description={field == "Frontend" ? "Umiejętność stylowania dokumentu HTML zarówno natywnym CSS jak i preprocesorem SCSS. Znajomość RWD i Bootstrapa." :"Znajomość składni i funkcji języka. Operacje na plikach i umiejętność programowania obiektowego."} />
+                <Row className="d-flex align-items-stretch">
+                    <Col md={4} xs={12} className="d-flex my-2 my-md-0">
+                        <Skill title={field == "Frontend" ? "CSS" : "C++"} description={field == "Frontend" ? "Umiejętność stylowania dokumentu HTML zarówno natywnym CSS jak i preprocesorem SCSS. Znajomość RWD i Bootstrapa." : "Znajomość składni i funkcji języka. Operacje na plikach i umiejętność programowania obiektowego."} />
                     </Col>
-                    <Col>
+                    <Col md={4} xs={12} className="d-flex my-2 my-md-0">
                         <Skill title={field == "Frontend" ? "HTML" : "Python"} description={field == "Frontend" ? "Duża znajomość elementów strony, znaczników meta i tworzenia poprawnego układu strony np. metodologia BEM. Umiejętność wstawiania grafik, tabel, list i innych elementów strony." : "Znajomość funkcji języka takich jak funkcje warunkowe, pętle, umiejętność operowania na listach, plikach tekstowych i pisania funkcji"} />
                     </Col>
-                    <Col>
-                        <Skill title={field == "Frontend" ? "JS" : "SQL"} description={field == "Frontend" ? "Znajomość języka (pętle, tablice, instrukcje warunkowe, podstawy obiektowości). Operacje na DOM - vanilla JS/jQuery, renderowanie DOM na bazie JSON czytanego z publicznego API." :"Podstawowa znajomość poleceń takich jak select, update, where. Umiejętność filtrowania i sortowania danych. Łączenie stron z bazami danych i operowanie na nich przy pomocy PHP."} />
+                    <Col md={4} xs={12} className="d-flex my-2 my-md-0">
+                        <Skill title={field == "Frontend" ? "JS" : "SQL"} description={field == "Frontend" ? "Znajomość języka (pętle, tablice, instrukcje warunkowe, podstawy obiektowości). Operacje na DOM - vanilla JS/jQuery, renderowanie DOM na bazie JSON czytanego z publicznego API." : "Podstawowa znajomość poleceń takich jak select, update, where. Umiejętność filtrowania i sortowania danych. Łączenie stron z bazami danych i operowanie na nich przy pomocy PHP."} />
                     </Col>
                 </Row>
                 <Row>
