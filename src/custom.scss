@@ -1,7 +1,7 @@
 // Definiujemy nowe wartości kolorów
-$primary: #0d6efd;
-$secondary: #0A0C10;
-$success: #198754;
+$primary: #497bc5;
+$secondary: #0c0e13;
+$success: #3b529e;
 $danger: #dc3545;
 $warning: #ffc107;
 $info: #0dcaf0;
@@ -20,6 +20,13 @@ $dark: #121821;
   @media (max-width: 300px) {
     height: 250px; /* Wyższa wysokość dla mniejszych ekranów */
   }
+}
+
+.skill-logo {
+  height: 1.2em; /* Dopasowanie wysokości do tekstu */
+  width: auto; /* Automatyczna szerokość */
+  margin-right: 0.5rem; /* Odstęp między logo a tekstem */
+  vertical-align: middle; /* Wyrównanie w pionie */
 }
 
 // Importujemy Bootstrapa po nadpisaniu zmiennych

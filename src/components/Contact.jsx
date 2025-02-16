@@ -9,7 +9,7 @@ export default function Contact({ }) {
             <h3>Można skontaktować sie ze mną drogą telefoniczną lub mailową:</h3>
             <h4><i class="bi bi-envelope"></i> igor.matlingiewicz@gmail.com</h4>
             <h4><i class="bi bi-telephone"></i> 697-327-580</h4>
-            <h3>Można też wysłać do mnie wiadomość mailową w poniższym formularzu:</h3>
+            <h3><i class="bi bi-chat-left-dots"></i> Można też wysłać do mnie wiadomość mailową w poniższym formularzu:</h3>
             <Form>
                 <Row className="mb-3">
                     <Form.Group as={Col} controlId="formGridEmail" md={4} xs={12}>

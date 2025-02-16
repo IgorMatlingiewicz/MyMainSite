@@ -8,12 +8,18 @@ export default function AppNavbar() {
 
   const handleLinkClick = (id) => {
     setExpanded(false);
+    
+    if (id === "home") {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+    
     const element = document.getElementById(id);
-    const navbarHeihgt = navbarRef.current.offsetHeight;
-    const offset = element.offsetTop - navbarHeihgt;
-    window.scrollTo({ top: offset, behavior: 'smooth'});
+    const navbarHeight = navbarRef.current.offsetHeight;
+    const offset = element.offsetTop - navbarHeight;
+    
+    window.scrollTo({ top: offset, behavior: 'smooth' });
   };
-
   return (
     <Navbar bg="secondary" variant="dark" expand="lg" className='m-0 sticky-top' expanded={expanded} ref={navbarRef}>
       <Container>
