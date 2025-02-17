@@ -2,9 +2,9 @@
 $primary: #497bc5;
 $secondary: #0c0e13;
 $success: #3b529e;
-$danger: #dc3545;
-$warning: #ffc107;
-$info: #0dcaf0;
+$danger: #705558;
+$warning: #33ade6;
+$info: #000000;
 $light: #f8f9fa;
 $dark: #121821;
 
@@ -27,6 +27,10 @@ $dark: #121821;
   width: auto; /* Automatyczna szerokość */
   margin-right: 0.5rem; /* Odstęp między logo a tekstem */
   vertical-align: middle; /* Wyrównanie w pionie */
+}
+
+.cursor-pointer{
+  cursor: pointer;
 }
 
 // Importujemy Bootstrapa po nadpisaniu zmiennych

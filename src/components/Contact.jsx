@@ -3,13 +3,18 @@ import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 
-export default function Contact({ }) {
+import contentPL from "../data/contentPL.json";
+import contentEN from "../data/contentEN.json";
+
+export default function Contact({ language }) {
+    let content = language == "PL" ? contentPL : contentEN;
+
     return (
         <>
-            <h3>Można skontaktować sie ze mną drogą telefoniczną lub mailową:</h3>
+            <h3>{content.contact["contactOptions"]}</h3>
             <h4><i class="bi bi-envelope"></i> igor.matlingiewicz@gmail.com</h4>
             <h4><i class="bi bi-telephone"></i> 697-327-580</h4>
-            <h3><i class="bi bi-chat-left-dots"></i> Można też wysłać do mnie wiadomość mailową w poniższym formularzu:</h3>
+            <h3><i class="bi bi-chat-left-dots"></i> {content.contact.form['formInfo']}</h3>
             <Form>
                 <Row className="mb-3">
                     <Form.Group as={Col} controlId="formGridEmail" md={4} xs={12}>
@@ -18,27 +23,27 @@ export default function Contact({ }) {
                     </Form.Group>
 
                     <Form.Group as={Col} controlId="formGridPassword" md={4} xs={12}>
-                        <Form.Label>Imie i nazwisko</Form.Label>
-                        <Form.Control type="text" placeholder="Imie i nazwisko" />
+                        <Form.Label>{content.contact.form["name"]}</Form.Label>
+                        <Form.Control type="text" placeholder={content.contact.form["name"]} />
                     </Form.Group>
 
                     <Form.Group as={Col} controlId="formGridPassword" md={4} xs={12}>
-                        <Form.Label>Numer telefonu (opcjonalne)</Form.Label>
-                        <Form.Control type="text" placeholder="Numer telefonu (opcjonalne)" />
+                        <Form.Label>{content.contact.form["phone"]}</Form.Label>
+                        <Form.Control type="text" placeholder={content.contact.form["phone"]} />
                     </Form.Group>
                 </Row>
 
                 <Form.Group className="mb-3" controlId="formGridAddress1">
-                    <Form.Label>Treść wiadomości:</Form.Label>
-                    <Form.Control as="textarea" placeholder="Treść Twojej wiadomości" rows={4} />
+                    <Form.Label>{content.contact.form["message"]}</Form.Label>
+                    <Form.Control as="textarea" placeholder={content.contact.form["message"]} rows={4} />
                 </Form.Group>
 
                 <Form.Group className="mb-3" id="formGridCheckbox">
-                    <Form.Check type="checkbox" label="* Wyrażam zgodę na przetwarzanie przez właściciela strony moich danych osobowych zawartych w formularzu w celu udzielenia odpowiedzi na zadane poprzez formularz pytania." />
+                    <Form.Check type="checkbox" label={content.contact.form["agreement"]} />
                 </Form.Group>
 
-                <Button variant="primary" type="submit">
-                    Wyślij
+                <Button variant="warning" type="submit" className='fw-bold'>
+                    {content.contact.form["submit"]}
                 </Button>
             </Form>
         </>

@@ -1,0 +1,79 @@
+{
+    "navbar": {
+        "home": "Home page",
+        "skills": "Skills",
+        "contact": "Contact"
+    },
+    "aboutMe": {
+        "header": "About me",
+        "1": "I am an ambitious young person eager to acquire new knowledge and experience in the IT industry. I became interested in programming and creating websites and web applications at the beginning of technical school, and since then I have been learning new things, languages, and technologies, working on projects that can be seen in my repositories.",
+        "2": "I hold a technician degree in IT and am currently studying computer science at the Silesian University of Technology. I am looking for a job where I can develop my skills and gain new ones with the help of more experienced professionals. So far, I have worked mostly in frontend development, creating several websites that are still active today, but I would also like to expand into backend development.",
+        "3": "This website serves as my online CV to describe and showcase both my skills and experience. Below, I also include a contact form allowing you to reach me by email, as well as my CV in the form of a standard PDF file."
+    },
+    "education": {
+        "header": "Education",
+        "places": [
+            {
+                "title": "Silesian University of Technology in Gliwice (2023 - present)",
+                "description": "Field of study: Computer Science"
+            },
+            {
+                "title": "Techniczne Zakłady Naukowe w Częstochowie (Technical Secondary School) (2019-2023)",
+                "description": "Field of study: IT Technician"
+            },
+            {
+                "title": "EduPlus – Two-week Erasmus+ internship",
+                "description": "Internship where I was developing applications using Windows Forms technology in an English-speaking team"
+            },
+            {
+                "title": "Jupiter – School of Frontend and Game Development (2021 - 2023)",
+                "description": "Courses in web development"
+            }
+        ]
+    },
+    "skills": {
+        "header": "Skills",
+        "Frontend": {
+            "CSS": "I can style websites using both native CSS and the SCSS preprocessor. I am proficient in creating responsive web pages and familiar with the Bootstrap library.",
+            "HTML": "I am familiar with and can use many HTML elements such as lists, tables, and many more. I also understand meta tags and can create well-structured web pages, for example, by following the BEM methodology.",
+            "JS": "I know the syntax and built-in functions of JavaScript (loops, arrays, conditional statements, basic object-oriented concepts). I can manipulate the DOM using standard JavaScript or jQuery, render the DOM using JSON data fetched from a public API."
+        },
+        "Backend": {
+            "CPP": "I am familiar with C++ syntax and functions. I can handle file operations and understand the basics of object-oriented programming.",
+            "Python": "I have knowledge of fundamental Python functions such as conditionals, loops, list operations, text file handling, and writing my own functions.",
+            "SQL": "I can use basic SQL commands such as SELECT, UPDATE, and WHERE. I know how to filter and sort data. I am capable of connecting a website to a database and handling it using PHP."
+        },
+        "React": "I am proficient in working with the React library, developing functional components, writing modular code, and understanding JSX syntax. A good example of my work in React is this website, which was built using this library. For styling, I used the React-Bootstrap library, which provides ready-to-use React components with built-in Bootstrap styles. I also used the Vite tool to create this project."
+    },
+    "OtherInfo": {
+        "otherSkillsHeader": "Other skills",
+        "OtherSkills": [
+            "Github - basic knowledge of the platform and related console commands",
+            "English - B2 level proficiency",
+            "Photoshop - basic knowledge of the program and the ability to modify graphics"
+        ],
+        "coursesHeader": "Courses and certificates",
+        "Courses": [
+            "PCAP: Programming Essentials in Python",
+            "Udemy: React – Complete Guide 2025 (Academind) (in progress)",
+            "Udemy: Zaawansowane projekty w CSS i JavaScript (Samuraj Programowania)"
+        ]
+    },
+    "contact": {
+        "header": "Contact",
+        "contactOptions": "You can contact me by phone or email:",
+        "form": {
+            "formInfo": "You can also send email message to me in the from below:",
+            "name": "Name and surname",
+            "phone": "Phone number (optional)",
+            "message": "Message content:",
+            "agreement": "* I consent to the processing of my personal data provided in the form by the website owner for the purpose of responding to the message submitted through the form.",
+            "submit": "Send"
+        }
+    },
+    "links": {
+        "header": "Links",
+        "github": "My GitHub account",
+        "CV": "My CV in PDF form"
+    }
+}

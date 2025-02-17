@@ -1,36 +1,40 @@
 import React, { useState, useRef } from 'react';
-import { Navbar, Nav, Container } from 'react-bootstrap';
+import { Navbar, Nav, Container, Button } from 'react-bootstrap';
+import contentPL from "../data/contentPL.json";
+import contentEN from "../data/contentEN.json";
 
-export default function AppNavbar() {
+export default function AppNavbar({ setLanguage, language }) {
+  let content = language == "PL" ? contentPL : contentEN;
 
   const [expanded, setExpanded] = useState(false);
-  const navbarRef = useRef(null); 
+  const navbarRef = useRef(null);
 
   const handleLinkClick = (id) => {
     setExpanded(false);
-    
+
     if (id === "home") {
       window.scrollTo({ top: 0, behavior: 'smooth' });
       return;
     }
-    
+
     const element = document.getElementById(id);
     const navbarHeight = navbarRef.current.offsetHeight;
     const offset = element.offsetTop - navbarHeight;
-    
+
     window.scrollTo({ top: offset, behavior: 'smooth' });
   };
   return (
     <Navbar bg="secondary" variant="dark" expand="lg" className='m-0 sticky-top' expanded={expanded} ref={navbarRef}>
       <Container>
-        <Navbar.Brand href="#home"><h2>Matlingiewicz dev</h2></Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={() => setExpanded(expanded ? false : true)}/>
+        <Navbar.Brand className="cursor-pointer" onClick={() => handleLinkClick('home')}><h2>Matlingiewicz dev</h2></Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={() => setExpanded(expanded ? false : true)} />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link onClick={() => handleLinkClick('home')}>Strona główna</Nav.Link>
-            <Nav.Link onClick={() => handleLinkClick('skills')}>Umiejętności</Nav.Link>
-            <Nav.Link onClick={() => handleLinkClick('contact')}>Kontakt</Nav.Link>
+            <Nav.Link onClick={() => handleLinkClick('home')}>{content.navbar["home"]}</Nav.Link>
+            <Nav.Link onClick={() => handleLinkClick('skills')}>{content.navbar["skills"]}</Nav.Link>
+            <Nav.Link onClick={() => handleLinkClick('contact')}>{content.navbar["contact"]}</Nav.Link>
           </Nav>
+          <Button type="submit" variant="warning" className="ms-auto fw-bold" onClick={() => setLanguage(language == "PL" ? "EN" : "PL")}>{language}</Button>
         </Navbar.Collapse>
       </Container>
     </Navbar>

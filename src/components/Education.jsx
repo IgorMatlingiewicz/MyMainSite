@@ -1,33 +1,20 @@
 import Carousel from 'react-bootstrap/Carousel';
+import contentPL from "../data/contentPL.json";
+import contentEN from "../data/contentEN.json";
 
-export default function Education() {
+export default function Education({ language }) {
+    let content = language == "PL" ? contentPL : contentEN;
 
     return (
         <Carousel interval={null} className="text-carousel" controls={false} >
-            <Carousel.Item>
-                <div className="carousel-content">
-                    <h3>Politechnika Śląska w Gliwicach (2023 – obecnie)</h3>
-                    <p>Kierunek: Informatyka</p>
-                </div>
-            </Carousel.Item>
-            <Carousel.Item>
-                <div className="carousel-content">
-                    <h3>Techniczne Zakłady Naukowe w Częstochowie (2019-2023)</h3>
-                    <p>Kierunek: Technik Informatyk</p>
-                </div>
-            </Carousel.Item>
-            <Carousel.Item>
-                <div className="carousel-content">
-                    <h3>EduPlus – dwutygodniowe praktyki z Erasmus+</h3>
-                    <p>Praktyki podczas których programowałem aplikacje w technologii Windows Forms w anglojęzycznym zespole</p>
-                </div>
-            </Carousel.Item>
-            <Carousel.Item>
-                <div className="carousel-content">
-                    <h3>Jupiter – szkoła frontendu i tworzenia gier (2021-2023)</h3>
-                    <p>Zajęcia z tworzenia stron internetowych</p>
-                </div>
-            </Carousel.Item>
+            {content.education.places.map((item, index) => (
+                <Carousel.Item key={index}>
+                    <div className="carousel-content">
+                        <h3>{item.title}</h3>
+                        <p>{item.description}</p>
+                    </div>
+                </Carousel.Item>
+            ))}
         </Carousel>
     )
 }
