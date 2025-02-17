@@ -8,7 +8,9 @@
         "header": "About me",
         "1": "I am an ambitious young person eager to acquire new knowledge and experience in the IT industry. I became interested in programming and creating websites and web applications at the beginning of technical school, and since then I have been learning new things, languages, and technologies, working on projects that can be seen in my repositories.",
         "2": "I hold a technician degree in IT and am currently studying computer science at the Silesian University of Technology. I am looking for a job where I can develop my skills and gain new ones with the help of more experienced professionals. So far, I have worked mostly in frontend development, creating several websites that are still active today, but I would also like to expand into backend development.",
-        "3": "This website serves as my online CV to describe and showcase both my skills and experience. Below, I also include a contact form allowing you to reach me by email, as well as my CV in the form of a standard PDF file."
+        "3": "This website serves as my online CV to describe and showcase both my skills and experience. Below, I also include a contact form allowing you to reach me by email, as well as my CV in the form of a standard PDF file.",
+        "showText": "Read more",
+        "hideText": "Hide text"
     },
     "education": {
         "header": "Education",

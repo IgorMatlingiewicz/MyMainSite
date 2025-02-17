@@ -8,7 +8,9 @@
         "header": "O mnie",
         "1": "Jestem ambitną, młodą osobą chętną do nabycia nowej wiedzy i doświadczenia w branży IT. Programowaniem i tworzeniem stron oraz aplikacji internetowych zainteresowałem się na początku technikum i od tej pory uczę się nowych rzeczy, języków i technologii, robiąc przy tym projekty, które można zobaczyć w moich repozytoriach",
         "2": "Posiadam tytuł technika z informatyki i aktualnie studiuje informatykę na Politechnice Śląskiej. Szukam pracy, w której rozwinę swoje umiejętności i nabędę też nowe z pomocą bardziej doświadczonych ludzi. Dotychczas najwięcej pracowałem we frontendzie, zrobiłem kilka do dziś aktywnych stron, ale chciałbym się również rozwinąć w obszarze backendu.",
-        "3": "Strona ta ma być moim internetowym CV i opisać oraz pokazać moje zarówno umiejętności jak i doświadczenie. Niżej zamieszczę również formularz pozwalający sie skontaktować ze mną drogą mailową, oraz CV w postaci standardowego pliku PDF."
+        "3": "Strona ta ma być moim internetowym CV i opisać oraz pokazać moje zarówno umiejętności jak i doświadczenie. Niżej zamieszczę również formularz pozwalający sie skontaktować ze mną drogą mailową, oraz CV w postaci standardowego pliku PDF.",
+        "showText": "Czytaj więcej",
+        "hideText": "Zwiń tekst"
     },
     "education": {
         "header": "Education",

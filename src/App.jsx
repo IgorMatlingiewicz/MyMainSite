@@ -41,7 +41,7 @@ function App() {
               aria-expanded={open}
               className="my-3 fw-bold"
             >
-              {open ? 'Zwiń tekst' : 'Czytaj więcej'}
+              {open ? content.aboutMe["hideText"] : content.aboutMe["showText"]}
             </Button >
 
             {/* <p>{content.aboutMe["1"]} <a href="https://github.com/IgorMatlingiewicz" className='link-primary' target="_blank">GitHub</a>.</p>
