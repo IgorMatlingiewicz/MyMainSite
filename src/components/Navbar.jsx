@@ -1,9 +1,10 @@
 import React, { useState, useRef } from 'react';
 import { Navbar, Nav, Container, Button } from 'react-bootstrap';
+
 import contentPL from "../data/contentPL.json";
 import contentEN from "../data/contentEN.json";
 
-export default function AppNavbar({ setLanguage, language }) {
+export default function AppNavbar({ setLanguage, language, setMode, mode }) {
   let content = language == "PL" ? contentPL : contentEN;
 
   const [expanded, setExpanded] = useState(false);
@@ -24,7 +25,7 @@ export default function AppNavbar({ setLanguage, language }) {
     window.scrollTo({ top: offset, behavior: 'smooth' });
   };
   return (
-    <Navbar bg="secondary" variant="dark" expand="lg" className='m-0 sticky-top' expanded={expanded} ref={navbarRef}>
+    <Navbar bg={mode == "dark" ? "secondary" : "primary"} variant="dark" expand="lg" className='m-0 sticky-top' expanded={expanded} ref={navbarRef}>
       <Container>
         <Navbar.Brand className="cursor-pointer" onClick={() => handleLinkClick('home')}><h2>Matlingiewicz dev</h2></Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={() => setExpanded(expanded ? false : true)} />
@@ -34,7 +35,10 @@ export default function AppNavbar({ setLanguage, language }) {
             <Nav.Link onClick={() => handleLinkClick('skills')}>{content.navbar["skills"]}</Nav.Link>
             <Nav.Link onClick={() => handleLinkClick('contact')}>{content.navbar["contact"]}</Nav.Link>
           </Nav>
-          <Button type="submit" variant="warning" className="ms-auto fw-bold" onClick={() => setLanguage(language == "PL" ? "EN" : "PL")}>{language}</Button>
+          <div>
+            <Button variant="warning" className="mx-3" onClick={() => setMode(mode == "dark" ? "bright" : "dark")}><i class={mode == "dark" ? "bi bi-moon" : "bi bi-brightness-high"}></i></Button>
+            <Button variant="warning" className="mx-3 fw-bold" onClick={() => setLanguage(language == "PL" ? "EN" : "PL")}>{language}</Button>
+          </div>
         </Navbar.Collapse>
       </Container>
     </Navbar>

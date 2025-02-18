@@ -1,12 +1,12 @@
 import Col from 'react-bootstrap/Col';
 import ListGroup from 'react-bootstrap/ListGroup';
 
-export default function MoreInfo({ title, infoList }) {
+export default function MoreInfo({ title, infoList, mode }) {
     return (
         <Col>
             <h2 className='my-3 text-primary'>{title}</h2>
             <ListGroup>
-                {infoList.map(info => <ListGroup.Item className="bg-secondary text-light border border-secondary mt-1">{info}</ListGroup.Item>)}
+                {infoList.map(info => <ListGroup.Item className={mode == "dark" ? "bg-secondary text-light border border-secondary mt-1" : "bg-danger border border-danger mt-1 text-dark"}>{info}</ListGroup.Item>)}
             </ListGroup>
         </Col>
     )

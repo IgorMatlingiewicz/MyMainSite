@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { use, useState } from 'react'
 import AppNavbar from './components/Navbar';
 import Education from './components/Education';
 import Skills from './components/Skills';
@@ -9,19 +9,21 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { Button, Collapse } from 'react-bootstrap';
+
 import contentPL from "./data/contentPL.json";
 import contentEN from "./data/contentEN.json";
 
 function App() {
   const [open, setOpen] = useState(false);
-  const [language, setLanguage] = useState("PL")
+  const [language, setLanguage] = useState("PL");
+  const [mode, setMode] = useState("dark");
 
   let content = language == "PL" ? contentPL : contentEN;
 
   return (
-    <>
-      <AppNavbar setLanguage={setLanguage} language={language} />
-      <Container className="bg-dark text-light mt-3">
+    <div className={mode == "dark" ? "bg-dark text-light" : "bg-light text-dark"}>
+      <AppNavbar setLanguage={setLanguage} language={language} setMode={setMode} mode={mode}/>
+      <Container className="mt-3">
         <Row id='home'>
           <Col md={6} xs={12}>
             <h2 className='text-primary'>{content.aboutMe["header"]}</h2>
@@ -51,24 +53,24 @@ function App() {
           </Col>
           <Col>
             <h2 className='text-primary'>{content.education["header"]}</h2>
-            <Education language={language} />
+            <Education language={language} mode={mode}/>
           </Col>
         </Row>
-        <Row id='skills' className='my-3'>
+        <Row id='skills' className='mt-5'>
           <h2 className='text-primary'>{content.skills["header"]}</h2>
-          <Skills language={language} />
+          <Skills language={language} mode={mode}/>
         </Row>
         <Row className="my-3">
-          <MoreInfo title={content.OtherInfo["otherSkillsHeader"]} infoList={content.OtherInfo.OtherSkills} />
-          <MoreInfo title={content.OtherInfo["coursesHeader"]} infoList={content.OtherInfo.Courses} />
+          <MoreInfo title={content.OtherInfo["otherSkillsHeader"]} infoList={content.OtherInfo.OtherSkills} mode={mode}/>
+          <MoreInfo title={content.OtherInfo["coursesHeader"]} infoList={content.OtherInfo.Courses} mode={mode}/>
         </Row>
         <Row id="contact" className='my-3'>
           <h2 className='text-primary'>{content.contact["header"]}</h2>
           <Contact language={language} />
         </Row>
       </Container >
-      <Footer language={language} />
-    </>
+      <Footer language={language} mode={mode}/>
+    </div>
   )
 }
 

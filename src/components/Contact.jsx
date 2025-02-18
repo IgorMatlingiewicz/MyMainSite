@@ -12,8 +12,8 @@ export default function Contact({ language }) {
     return (
         <>
             <h3>{content.contact["contactOptions"]}</h3>
-            <h4><i class="bi bi-envelope"></i> igor.matlingiewicz@gmail.com</h4>
-            <h4><i class="bi bi-telephone"></i> 697-327-580</h4>
+            <h4 className='fw-bold'><i class="bi bi-envelope"></i> igor.matlingiewicz@gmail.com</h4>
+            <h4 className='fw-bold'><i class="bi bi-telephone"></i> 697-327-580</h4>
             <h3><i class="bi bi-chat-left-dots"></i> {content.contact.form['formInfo']}</h3>
             <Form>
                 <Row className="mb-3">
@@ -39,7 +39,7 @@ export default function Contact({ language }) {
                 </Form.Group>
 
                 <Form.Group className="mb-3" id="formGridCheckbox">
-                    <Form.Check type="checkbox" label={content.contact.form["agreement"]} />
+                    <Form.Check type="checkbox" label={content.contact.form["agreement"]}/>
                 </Form.Group>
 
                 <Button variant="warning" type="submit" className='fw-bold'>
