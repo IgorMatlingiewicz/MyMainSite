@@ -34,7 +34,7 @@
         ]
     },
     "skills": {
-        "header": "Skills",
+        "header": "Umiejętności",
         "Frontend": {
             "CSS": "Potrafię stylować strony zarówno natywnym CSS jak i preprocesorem SCSS. Umiem tworzyć strony responsywne i znam bibliotekę Bootstrapa.",
             "HTML": "Znam i umiem korzystać z wielu elementów strony dostępnych w HTML takich jak listy, tabele i wiele innych. Znam również znaczniki meta i umiem tworzyć poprawny układu strony np. stosować się do metodologii BEM.",
