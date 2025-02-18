@@ -36,8 +36,8 @@ export default function AppNavbar({ setLanguage, language, setMode, mode }) {
             <Nav.Link onClick={() => handleLinkClick('contact')}>{content.navbar["contact"]}</Nav.Link>
           </Nav>
           <div>
-            <Button variant="warning" className="mx-3" onClick={() => setMode(mode == "dark" ? "bright" : "dark")}><i class={mode == "dark" ? "bi bi-moon" : "bi bi-brightness-high"}></i></Button>
-            <Button variant="warning" className="mx-3 fw-bold" onClick={() => setLanguage(language == "PL" ? "EN" : "PL")}>{language}</Button>
+            <Button variant="warning" onClick={() => setMode(mode == "dark" ? "bright" : "dark")}><i class={mode == "dark" ? "bi bi-moon" : "bi bi-brightness-high"}></i></Button>
+            <Button variant="warning" className="mx-5" onClick={() => setLanguage(language == "PL" ? "EN" : "PL")}>{language}</Button>
           </div>
         </Navbar.Collapse>
       </Container>

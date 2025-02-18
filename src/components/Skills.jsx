@@ -31,34 +31,15 @@ export default function Skills({ language, mode }) {
 
     return (
         <>
-            <Container className="mb-3">
-                <Row className="d-flex justify-content-center align-items-center text-center flex-column flex-md-row gap-2">
-                    <Col xs="auto" md="auto" className="order-md-1">
-                        <Button
-                            variant="warning"
-                            active={field === "Frontend"}
-                            onClick={() => handleClick("F")}
-                        >
-                            Frontend
-                        </Button>
-                    </Col>
-
-                    <Col xs="12" md="auto" className="order-md-2">
-                        <h2 className="text-primary">{field}</h2>
-                    </Col>
-
-                    <Col xs="auto" md="auto" className="order-md-3">
-                        <Button
-                            variant="warning"
-                            active={field === "Backend"}
-                            onClick={() => handleClick("B")}
-                        >
-                            Backend
-                        </Button>
+            <Container>
+                <Row className="mb-3">
+                    <Col className='d-flex justify-content-center'>
+                        <Button className='mx-5' variant={field == "F" ? "warning" : "outline-warning"} active={field === "Frontend"} onClick={() => handleClick("F")}><h4>Frontend</h4></Button>
+                        <Button className='mx-5' variant={field == "B" ? "warning" : "outline-warning"} active={field === "Backend"} onClick={() => handleClick("B")}><h4>Backend</h4></Button>
                     </Col>
                 </Row>
-
             </Container>
+
             <Container>
                 <Row className="d-flex align-items-stretch">
                     <Col md={4} xs={12} className="d-flex my-2 my-md-0">
