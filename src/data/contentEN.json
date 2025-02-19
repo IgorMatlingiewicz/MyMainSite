@@ -71,6 +71,17 @@
             "message": "Message content:",
             "agreement": "* I consent to the processing of my personal data provided in the form by the website owner for the purpose of responding to the message submitted through the form.",
             "submit": "Send"
+        },
+        "modal": {
+            "success": {
+                "title": "Success!",
+                "message": "Your message has been sent correctly."
+            },
+            "error": {
+                "title": "Error!",
+                "message": "There was an error while sending your message: "
+            },
+            "button": "Close"
         }
     },
     "links": {

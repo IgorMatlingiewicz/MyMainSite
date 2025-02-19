@@ -1,7 +1,10 @@
+import { useState } from 'react'
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
+import Modal from 'react-bootstrap/Modal';
+
 
 import contentPL from "../data/contentPL.json";
 import contentEN from "../data/contentEN.json";
@@ -9,8 +12,11 @@ import contentEN from "../data/contentEN.json";
 export default function Contact({ language }) {
     let content = language == "PL" ? contentPL : contentEN;
 
+    const [showModal, setShowModal] = useState(false);
+    const [formError, setFormError] = useState(null);
+
     const handleSubmit = (e) => {
-        e.preventDefault(); // Zapobiegamy domyślnemu zachowaniu formularza
+        e.preventDefault();
 
         const form = e.target;
         const data = new FormData(form);
@@ -18,21 +24,25 @@ export default function Contact({ language }) {
         fetch("/", {
             method: "POST",
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: new URLSearchParams(data).toString()
+            body: new URLSearchParams(data).toString(),
         })
             .then(() => {
-                alert("Formularz został wysłany!");
-                form.reset(); // Opcjonalne czyszczenie formularza
+                setFormError(null);
+                setShowModal(true);
+                form.reset();
             })
-            .catch((error) => alert("Błąd wysyłania formularza: " + error));
+            .catch((error) => {
+                setFormError(content.contact.modal.error["message"] + error);
+                setShowModal(true);
+            });
     };
 
     return (
         <>
             <h3>{content.contact["contactOptions"]}</h3>
-            <h4 className='fw-bold'><i class="bi bi-envelope"></i> igor.matlingiewicz@gmail.com</h4>
-            <h4 className='fw-bold'><i class="bi bi-telephone"></i> 697-327-580</h4>
-            <h3><i class="bi bi-chat-left-dots"></i> {content.contact.form['formInfo']}</h3>
+            <h4 className='fw-bold'><i className="bi bi-envelope"></i> igor.matlingiewicz@gmail.com</h4>
+            <h4 className='fw-bold'><i className="bi bi-telephone"></i> 697-327-580</h4>
+            <h3><i className="bi bi-chat-left-dots"></i> {content.contact.form['formInfo']}</h3>
 
             <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" onSubmit={handleSubmit}>
                 <input type="hidden" name="form-name" value="contact" />
@@ -71,6 +81,20 @@ export default function Contact({ language }) {
                     {content.contact.form["submit"]}
                 </Button>
             </form>
+
+            <Modal show={showModal} onHide={() => setShowModal(false)} centered>
+                <Modal.Header closeButton>
+                    <Modal.Title>{formError ? content.contact.modal.error.title : content.contact.modal.success.title}</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    {formError ? formError : content.contact.modal.success["message"]}
+                </Modal.Body>
+                <Modal.Footer>
+                    <Button variant="secondary" onClick={() => setShowModal(false)}>
+                        {content.contact.modal["button"]}
+                    </Button>
+                </Modal.Footer>
+            </Modal>
         </>
     )
 }

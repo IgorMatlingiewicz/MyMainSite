@@ -71,6 +71,17 @@
             "message": "Treść wiadomości:",
             "agreement": "* Wyrażam zgodę na przetwarzanie przez właściciela strony moich danych osobowych zawartych w formularzu w celu udzielenia odpowiedzi na zadane poprzez formularz pytania.",
             "submit": "Wyślij"
+        },
+        "modal": {
+            "success": {
+                "title": "Sukces!",
+                "message": "Twója wiadomość została poprawnie wysłana."
+            },
+            "error": {
+                "title": "Błąd!",
+                "message": "Wystąpił błąd przy wysyłaniu wiadomości: "
+            },
+            "button": "Zamknij"
         }
     },
     "links": {
