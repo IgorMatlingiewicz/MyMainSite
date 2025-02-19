@@ -67,7 +67,7 @@
         "form": {
             "formInfo": "Można też wysłać do mnie wiadomość mailową w poniższym formularzu:",
             "name": "Imie i nazwisko",
-            "phone": "Phone number (optional)",
+            "phone": "Numer telefonu (opcjonalne)",
             "message": "Treść wiadomości:",
             "agreement": "* Wyrażam zgodę na przetwarzanie przez właściciela strony moich danych osobowych zawartych w formularzu w celu udzielenia odpowiedzi na zadane poprzez formularz pytania.",
             "submit": "Wyślij"

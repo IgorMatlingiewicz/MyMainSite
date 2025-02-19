@@ -15,7 +15,8 @@ export default function Contact({ language }) {
             <h4 className='fw-bold'><i class="bi bi-envelope"></i> igor.matlingiewicz@gmail.com</h4>
             <h4 className='fw-bold'><i class="bi bi-telephone"></i> 697-327-580</h4>
             <h3><i class="bi bi-chat-left-dots"></i> {content.contact.form['formInfo']}</h3>
-            <Form name="contact" method="POST" data-netlify="true" onSubmit="submit">
+            
+            <form name="contact" method="POST" data-netlify="true" onSubmit="submit">
                 <Row className="mb-3">
                     <Form.Group as={Col} controlId="formGridEmail" md={4} xs={12}>
                         <Form.Label>Email</Form.Label>
@@ -45,7 +46,7 @@ export default function Contact({ language }) {
                 <Button variant="warning" type="submit" className='fw-bold'>
                     {content.contact.form["submit"]}
                 </Button>
-            </Form>
+            </form>
         </>
     )
 }
