@@ -10,22 +10,21 @@ export default function Contact({ language }) {
     let content = language == "PL" ? contentPL : contentEN;
 
     const handleSubmit = (e) => {
-        e.preventDefault(); // Zatrzymanie domyślnej akcji formularza
+        e.preventDefault(); // Zapobiegamy domyślnemu zachowaniu formularza
 
         const form = e.target;
         const data = new FormData(form);
 
         fetch("/", {
             method: "POST",
-            body: data,
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: new URLSearchParams(data).toString()
         })
             .then(() => {
                 alert("Formularz został wysłany!");
                 form.reset(); // Opcjonalne czyszczenie formularza
             })
-            .catch((error) => {
-                alert("Błąd wysyłania formularza: " + error);
-            });
+            .catch((error) => alert("Błąd wysyłania formularza: " + error));
     };
 
     return (
@@ -35,7 +34,13 @@ export default function Contact({ language }) {
             <h4 className='fw-bold'><i class="bi bi-telephone"></i> 697-327-580</h4>
             <h3><i class="bi bi-chat-left-dots"></i> {content.contact.form['formInfo']}</h3>
 
-            <form name="contact" method="POST" data-netlify="true" onSubmit={handleSubmit}>
+            <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" onSubmit={handleSubmit}>
+                <input type="hidden" name="form-name" value="contact" />
+                <p hidden>
+                    <label>
+                        Don’t fill this out: <input name="bot-field" />
+                    </label>
+                </p>
                 <Row className="mb-3">
                     <Form.Group as={Col} controlId="formGridEmail" md={4} xs={12}>
                         <Form.Label>Email</Form.Label>
