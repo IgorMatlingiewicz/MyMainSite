@@ -30,7 +30,7 @@ export default function Projects({ language, mode }) {
                     <a href={content.projects.SWAPI.link} target="_blank">Link do repozytorium GitHub</a>
                 </Col>
                 <Col md={6} className="order-md-2">
-                    <Carousel>
+                    <Carousel interval={null}>
                         <Carousel.Item className="carousel-slide">
                             <img src={SWAPI1} className="carousel-img" />
                         </Carousel.Item>
@@ -51,7 +51,7 @@ export default function Projects({ language, mode }) {
                     <a href={content.projects.ticTacToe.link} target="_blank">Link do repozytorium GitHub</a>
                 </Col>
                 <Col md={6} className="order-md-1">
-                    <Carousel>
+                    <Carousel interval={null}>
                         <Carousel.Item className="carousel-slide">
                             <img src={TicTacToe1} className="carousel-img" />
                         </Carousel.Item>
@@ -72,7 +72,7 @@ export default function Projects({ language, mode }) {
                     <a href={content.projects.nightSky.link} target="_blank">Link do repozytorium GitHub</a>
                 </Col>
                 <Col md={6} className="order-md-2">
-                    <Carousel>
+                    <Carousel interval={null}>
                         <Carousel.Item className="carousel-slide">
                             <img src={nightSky1} className="carousel-img" />
 
