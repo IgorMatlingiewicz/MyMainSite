@@ -5,7 +5,6 @@ import Education from './components/Education';
 import Skills from './components/Skills';
 import MoreInfo from './components/MoreInfo';
 import Projects from './components/Projects';
-import Projects2 from './components/Projects2';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
@@ -71,10 +70,6 @@ function App() {
         <Row id="projects" className='my-3'>
           <h2 className='text-primary'>{content.projects["header"]}</h2>
           <Projects language={language} mode={mode}/>
-        </Row>
-        <Row id="projects" className='my-3'>
-          <h2 className='text-primary'>{content.projects["header"]}</h2>
-          <Projects2 language={language} mode={mode}/>
         </Row>
         <Row id="contact" className='my-3'>
           <h2 className='text-primary'>{content.contact["header"]}</h2>

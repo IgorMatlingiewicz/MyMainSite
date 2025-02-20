@@ -1,9 +1,18 @@
 import { useState } from "react";
-import { Carousel, Form } from "react-bootstrap";
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Carousel from 'react-bootstrap/Carousel';
 
-import SWAPI from '../assets/projects/SWAPISmall.png';
-import TicTacToe from '../assets/projects/TicTacToeSmall.png';
-import nightSky from '../assets/projects/nightSkySmall.png';
+import SWAPI1 from "../assets/projects2/SWAPI1.png"
+import SWAPI2 from "../assets/projects2/SWAPI2.png"
+import SWAPI3 from "../assets/projects2/SWAPI3.png"
+import TicTacToe1 from "../assets/projects2/TicTacToe1.png"
+import TicTacToe2 from "../assets/projects2/TicTacToe2.png"
+import TicTacToe3 from "../assets/projects2/TicTacToe3.png"
+import nightSky1 from "../assets/projects2/nightSky1.png"
+import nightSky2 from "../assets/projects2/nightSky2.png"
+import nightSky3 from "../assets/projects2/nightSky3.png"
 
 import contentPL from "../data/contentPL.json";
 import contentEN from "../data/contentEN.json";
@@ -11,58 +20,74 @@ import contentEN from "../data/contentEN.json";
 export default function Projects({ language, mode }) {
     let content = language == "PL" ? contentPL : contentEN;
 
-    const [activeIndex, setActiveIndex] = useState(0);
-
-    const handleSelect = (selectedIndex) => {
-        setActiveIndex(selectedIndex);
-    };
-
-    const slides = [
-        { title: content.projects.SWAPI.title, description: content.projects.SWAPI.description },
-        { title: content.projects.ticTacToe.title, description: content.projects.ticTacToe.description },
-        { title: content.projects.nightSky.title, description: content.projects.nightSky.description },
-    ];
-
-    console.log("link: ", slides[activeIndex].link)
-
     return (
-        <>
-            <h2 className="text-center">{slides[activeIndex].title}</h2>
-            <p className="text-center">{slides[activeIndex].description} <a href={slides[activeIndex].link} target="_blank">Link do repozytorium GitHub</a></p>
+        <Container>
 
-            <div className="d-flex justify-content-center aling-items-center mb-1">
-                <div className={mode == "dark" ? "bg-info rounded" : "bg-danger rounded"}>
-                {slides.map((slide, index) => (
-                    <Form.Check
-                        inline
-                        key={index}
-                        name="carousel-radio"
-                        type="radio"
-                        checked={activeIndex === index}
-                        onChange={() => setActiveIndex(index)}
-                        className="mx-4"
-                    />
-                ))}
-                </div>
-            </div>
+            <Row className="mb-5">
+                <Col md={6} className="order-md-1">
+                    <h3 className="mt-5">{content.projects.SWAPI.title}</h3>
+                    <p>{content.projects.SWAPI.description2}</p>
+                    <a href={content.projects.SWAPI.link} target="_blank">{content.projects.linkInfo2}</a>
+                </Col>
+                <Col md={6} className="order-md-2">
+                    <Carousel interval={null}>
+                        <Carousel.Item className="carousel-slide">
+                            <img src={SWAPI1} className="carousel-img" />
+                        </Carousel.Item>
+                        <Carousel.Item className="carousel-slide">
+                            <img src={SWAPI2} className="carousel-img" />
+                        </Carousel.Item>
+                        <Carousel.Item className="carousel-slide">
+                            <img src={SWAPI3} className="carousel-img" />
+                        </Carousel.Item>
+                    </Carousel>
+                </Col>
+            </Row>
 
-            <Carousel activeIndex={activeIndex} onSelect={handleSelect} interval={null} controls={false} indicators={false}>
-                <Carousel.Item className="carousel-slide">
-                    <div className="carousel-bg">
-                        <img src={SWAPI} alt="Star Wars API" className="carousel-img"/>
-                    </div>
-                </Carousel.Item>
-                <Carousel.Item className="carousel-slide">
-                    <div className="carousel-bg">
-                        <img src={TicTacToe} alt="Tic Tac Toe" className="carousel-img"/>
-                    </div>
-                </Carousel.Item>
-                <Carousel.Item className="carousel-slide">
-                    <div className="carousel-bg">
-                        <img src={nightSky} alt="Night Sky" className="carousel-img"/>
-                    </div>
-                </Carousel.Item>
-            </Carousel>
-        </>
+            <Row className="mb-5">
+                <Col md={6} className="order-md-2">
+                    <h3 className="mt-5">{content.projects.ticTacToe.title}</h3>
+                    <p>{content.projects.ticTacToe.description2}</p>
+                    <a href={content.projects.ticTacToe.link} target="_blank">{content.projects.linkInfo2}</a>
+                </Col>
+                <Col md={6} className="order-md-1">
+                    <Carousel interval={null}>
+                        <Carousel.Item className="carousel-slide">
+                            <img src={TicTacToe1} className="carousel-img" />
+                        </Carousel.Item>
+                        <Carousel.Item className="carousel-slide">
+                            <img src={TicTacToe2} className="carousel-img" />
+                        </Carousel.Item>
+                        <Carousel.Item className="carousel-slide">
+                            <img src={TicTacToe3} className="carousel-img" />
+                        </Carousel.Item>
+                    </Carousel>
+                </Col>
+            </Row>
+
+            <Row>
+                <Col md={6} className="order-md-1">
+                    <h3 className="mt-5">{content.projects.nightSky.title}</h3>
+                    <p>{content.projects.nightSky.description2}</p>
+                    <a href={content.projects.nightSky.link} target="_blank">{content.projects.linkInfo2}</a>
+                </Col>
+                <Col md={6} className="order-md-2">
+                    <Carousel interval={null}>
+                        <Carousel.Item className="carousel-slide">
+                            <img src={nightSky1} className="carousel-img" />
+
+                        </Carousel.Item>
+                        <Carousel.Item className="carousel-slide">
+                            <img src={nightSky2} className="carousel-img" />
+
+                        </Carousel.Item>
+                        <Carousel.Item className="carousel-slide">
+                            <img src={nightSky3} className="carousel-img" />
+                        </Carousel.Item>
+                    </Carousel>
+                </Col>
+            </Row>
+
+        </Container>
     )
 }

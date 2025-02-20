@@ -64,6 +64,7 @@
     },
     "projects": {
         "header": "Moje projekty",
+        "linkInfo": "Link do repozytorium GitHub",
         "SWAPI": {
             "title": "Star Wars API",
             "description": "Strona która pobiera dane z zewnętrznego API i wstawia je do tabeli, strona została stworzona z JavaScript  i Bootstrap.",

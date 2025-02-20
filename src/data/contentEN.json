@@ -64,6 +64,7 @@
     },
     "projects": {
         "header": "My projects",
+        "linkInfo": "Link to GitHub repository",
         "SWAPI": {
             "title": "Star Wars API",
             "description": "Site that gets data from API and puts it on the table, made with JavaScript and Bootstrap.",
