@@ -33,6 +33,7 @@ export default function AppNavbar({ setLanguage, language, setMode, mode }) {
           <Nav className="me-auto">
             <Nav.Link onClick={() => handleLinkClick('home')}>{content.navbar["home"]}</Nav.Link>
             <Nav.Link onClick={() => handleLinkClick('skills')}>{content.navbar["skills"]}</Nav.Link>
+            <Nav.Link onClick={() => handleLinkClick('projects')}>{content.navbar["projects"]}</Nav.Link>
             <Nav.Link onClick={() => handleLinkClick('contact')}>{content.navbar["contact"]}</Nav.Link>
           </Nav>
           <div>

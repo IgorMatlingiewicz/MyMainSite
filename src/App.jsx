@@ -1,10 +1,14 @@
 import { useState } from 'react'
+
 import AppNavbar from './components/Navbar';
 import Education from './components/Education';
 import Skills from './components/Skills';
-import Contact from './components/Contact';
 import MoreInfo from './components/MoreInfo';
+import Projects from './components/Projects';
+import Projects2 from './components/Projects2';
+import Contact from './components/Contact';
 import Footer from './components/Footer';
+
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -63,6 +67,14 @@ function App() {
         <Row className="my-3">
           <MoreInfo title={content.OtherInfo["otherSkillsHeader"]} infoList={content.OtherInfo.OtherSkills} mode={mode}/>
           <MoreInfo title={content.OtherInfo["coursesHeader"]} infoList={content.OtherInfo.Courses} mode={mode}/>
+        </Row>
+        <Row id="projects" className='my-3'>
+          <h2 className='text-primary'>{content.projects["header"]}</h2>
+          <Projects language={language} mode={mode}/>
+        </Row>
+        <Row id="projects" className='my-3'>
+          <h2 className='text-primary'>{content.projects["header"]}</h2>
+          <Projects2 language={language} mode={mode}/>
         </Row>
         <Row id="contact" className='my-3'>
           <h2 className='text-primary'>{content.contact["header"]}</h2>

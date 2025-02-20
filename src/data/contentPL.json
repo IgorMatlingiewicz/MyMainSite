@@ -2,6 +2,7 @@
     "navbar": {
         "home": "Strona główna",
         "skills": "Umiejętności",
+        "projects": "Projekty",
         "contact": "Kontakt"
     },
     "aboutMe": {
@@ -60,6 +61,27 @@
             "Udemy: React – Complete Guide 2025 (Academind) (w trakcie)",
             "Udemy: Zaawansowane projekty w CSS i JavaScript (Samuraj Programowania)"
         ]
+    },
+    "projects": {
+        "header": "Moje projekty",
+        "SWAPI": {
+            "title": "Star Wars API",
+            "description": "Strona która pobiera dane z zewnętrznego API i wstawia je do tabeli, strona została stworzona z JavaScript  i Bootstrap.",
+            "description2": "Strona która pobiera dane z zewnętrznego API i wstawia je do dynamicznie tworzonej tabeli. Działanie strony zostało stworzone w JavaScript, a do stylowania strony użyłem biblioteki Bootstrap. Stronę stworzyłem by pokazać moje umięjętności działania z publicznym API. Strona posiada menu gdzie można wybrać czy chcemy przeglądać baze postaci czy planet z uniwersum Star Wars.",
+            "link": "https://github.com/IgorMatlingiewicz/StarWarsApi"
+        },
+        "ticTacToe": {
+            "title": "React Tic-Tac-Toe",
+            "description": "Gra w kółko i krzyżyk dla dwóch osób stworzona w React.",
+            "description2": "Standardowa gra w kółko i krzyżyk dla dwóch osób stworzona w React. Do jej stworzenia użyłem funkcji jakie daje nam React takich jak stan. Pod planszą gry umieściłem dynamicznie generowaną historię ruchów danych zawodników.",
+            "link": "https://github.com/IgorMatlingiewicz/ReactTicTacToe"
+        },
+        "nightSky": {
+            "title": "Night Sky",
+            "description": "Mały projekt z elementem canvas pokazujący nocne niebo z losowo generowanymi konstelacjami.",
+            "description2": "Mały projekt przy użyciu elementu canvas który pokazuje gwieździste niebo i losowo generowane konstelacje łączace te gwiazdy. Porjekt głównie stworzony przy użyciu JavaScript.",
+            "link": "https://github.com/IgorMatlingiewicz/NightSky"
+        }
     },
     "contact": {
         "header": "Kontakt",

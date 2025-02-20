@@ -2,6 +2,7 @@
     "navbar": {
         "home": "Home page",
         "skills": "Skills",
+        "projects": "Projekty",
         "contact": "Contact"
     },
     "aboutMe": {
@@ -60,6 +61,27 @@
             "Udemy: React – Complete Guide 2025 (Academind) (in progress)",
             "Udemy: Zaawansowane projekty w CSS i JavaScript (Samuraj Programowania)"
         ]
+    },
+    "projects": {
+        "header": "My projects",
+        "SWAPI": {
+            "title": "Star Wars API",
+            "description": "Site that gets data from API and puts it on the table, made with JavaScript and Bootstrap.",
+            "description2": "Site that gets data from API and puts them into dynamically generated table. I made it with JavaScript and for styling I used Bootstrap. Project was made to show my abilities in working with public API. Website has menu in which you can choose if you want to get information about characters, or planets from Star Wars universe.",
+            "link": "https://github.com/IgorMatlingiewicz/StarWarsApi"
+        },
+        "ticTacToe": {
+            "title": "React Tic-Tac-Toe",
+            "description": "Tic-Tac-Toe game made in react for two persons.",
+            "description2": "Basic Tic Tac Toe game for two persons that I made in React. It uses basic things that comes with React like states. I added history of players moves under game board.",
+            "link": "https://github.com/IgorMatlingiewicz/ReactTicTacToe"
+        },
+        "nightSky": {
+            "title": "Night Sky",
+            "description": "Small canvas project that shows night sky with stars and random generated constellations.",
+            "description2": "Small canvas project that shows night sky with stars and randomly generated constellations with them. For this project I was mainly using canvas with JavaScript.",
+            "link": "https://github.com/IgorMatlingiewicz/NightSky"
+        }
     },
     "contact": {
         "header": "Contact",

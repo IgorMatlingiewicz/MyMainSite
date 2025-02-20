@@ -33,5 +33,25 @@ $dark: #1a1d23;
   cursor: pointer;
 }
 
+.carousel-slide {
+  position: relative;
+}
+
+.carousel-bg {
+  width: 100%;
+  max-height: 75vh; /* Ograniczenie wysokości */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-img {
+  width: 100%; /* Obrazek zajmuje całą szerokość kontenera */
+  max-width: 900px; /* Maksymalna szerokość */
+  height: auto; /* Utrzymanie proporcji */
+  object-fit: contain; /* Zapewnia, że cały obrazek jest widoczny */
+  max-height: 75vh; /* Nie pozwala, aby obrazek był zbyt wysoki */
+}
+
 // Importujemy Bootstrapa po nadpisaniu zmiennych
 @import "bootstrap/scss/bootstrap";
