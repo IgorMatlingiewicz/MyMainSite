@@ -4,15 +4,15 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Carousel from 'react-bootstrap/Carousel';
 
-import SWAPI1 from "../assets/projects2/SWAPI1.png"
-import SWAPI2 from "../assets/projects2/SWAPI2.png"
-import SWAPI3 from "../assets/projects2/SWAPI3.png"
-import TicTacToe1 from "../assets/projects2/TicTacToe1.png"
-import TicTacToe2 from "../assets/projects2/TicTacToe2.png"
-import TicTacToe3 from "../assets/projects2/TicTacToe3.png"
-import nightSky1 from "../assets/projects2/nightSky1.png"
-import nightSky2 from "../assets/projects2/nightSky2.png"
-import nightSky3 from "../assets/projects2/nightSky3.png"
+import SWAPI1 from "../assets/projects/SWAPI1C.png"
+import SWAPI2 from "../assets/projects/SWAPI2C.png"
+import SWAPI3 from "../assets/projects/SWAPI3C.png"
+import TicTacToe1 from "../assets/projects/TicTacToe1C.png"
+import TicTacToe2 from "../assets/projects/TicTacToe2C.png"
+import TicTacToe3 from "../assets/projects/TicTacToe3C.png"
+import nightSky1 from "../assets/projects/nightSky1C.png"
+import nightSky2 from "../assets/projects/nightSky2C.png"
+import nightSky3 from "../assets/projects/nightSky3C.png"
 
 import contentPL from "../data/contentPL.json";
 import contentEN from "../data/contentEN.json";
