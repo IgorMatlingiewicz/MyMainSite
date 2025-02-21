@@ -93,7 +93,7 @@
         "mail": "E-mail: ",
         "phoneNumber": "Numer telefonu: ",
         "form": {
-            "formInfo": "Fromularz kontaktowy:",
+            "formInfo": "Formularz kontaktowy:",
             "name": "Imie i nazwisko",
             "phone": "Numer telefonu (opcjonalne)",
             "message": "Treść wiadomości:",

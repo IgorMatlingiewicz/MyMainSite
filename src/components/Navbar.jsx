@@ -27,7 +27,7 @@ export default function AppNavbar({ setLanguage, language, setMode, mode }) {
   return (
     <Navbar bg={mode == "dark" ? "secondary" : "primary"} variant="dark" expand="lg" className='m-0 sticky-top' expanded={expanded} ref={navbarRef}>
       <Container>
-        <Navbar.Brand className="cursor-pointer" onClick={() => handleLinkClick('home')}><h2>Matlingiewicz dev</h2></Navbar.Brand>
+        <Navbar.Brand className="cursor-pointer" onClick={() => handleLinkClick('home')}><h2>Igor Matlingiewicz</h2></Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={() => setExpanded(expanded ? false : true)} />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
