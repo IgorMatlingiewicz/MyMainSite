@@ -39,10 +39,9 @@ export default function Contact({ language }) {
 
     return (
         <>
-            <h3>{content.contact["contactOptions"]}</h3>
-            <h4 className='fw-bold'><i className="bi bi-envelope"></i> igor.matlingiewicz@gmail.com</h4>
-            <h4 className='fw-bold'><i className="bi bi-telephone"></i> 697-327-580</h4>
-            <h3><i className="bi bi-chat-left-dots"></i> {content.contact.form['formInfo']}</h3>
+            <h4><i className="bi bi-envelope"></i> {content.contact.mail}igor.matlingiewicz@gmail.com</h4>
+            <h4><i className="bi bi-telephone"></i> {content.contact.phoneNumber}697-327-580</h4>
+            <h4><i className="bi bi-chat-left-dots"></i> {content.contact.form['formInfo']}</h4>
 
             <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" onSubmit={handleSubmit}>
                 <input type="hidden" name="form-name" value="contact" />

@@ -86,9 +86,10 @@
     },
     "contact": {
         "header": "Contact",
-        "contactOptions": "You can contact me by phone or email:",
+        "mail": "E-mail: ",
+        "phoneNumber": "Phone number: ",
         "form": {
-            "formInfo": "You can also send email message to me in the from below:",
+            "formInfo": "Contact form:",
             "name": "Name and surname",
             "phone": "Phone number (optional)",
             "message": "Message content:",

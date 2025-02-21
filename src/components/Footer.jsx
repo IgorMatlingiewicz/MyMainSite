@@ -15,10 +15,10 @@ export default function Footer({ language, mode }) {
                     <h2 className='my-4 pt-3'>{content.links["header"]}</h2>
                     <Row className='pb-4'>
                         <Col md={6} xs={12} className='mb-3 mb-md-0'>
-                            <a href="https://github.com/IgorMatlingiewicz" className='link-light' target="_blank"><h3><i className="bi bi-github"></i> {content.links["github"]}</h3></a>
+                            <a href="https://github.com/IgorMatlingiewicz" className='link-light' target="_blank"><h4><i className="bi bi-github"></i> {content.links["github"]}</h4></a>
                         </Col>
                         <Col md={6} xs={12}>
-                            <a href="../assets/CV_MatlingiewiczIgor.pdf" download="CV_MatlingiewiczIgor.pdf" className='link-light' target="_blank"><h3><i className="bi bi-file-earmark-person"></i> {content.links["CV"]}</h3></a>
+                            <a href="../assets/CV_MatlingiewiczIgor.pdf" download="CV_MatlingiewiczIgor.pdf" className='link-light' target="_blank"><h4><i className="bi bi-file-earmark-person"></i> {content.links["CV"]}</h4></a>
                         </Col>
                     </Row>
                 </Container>

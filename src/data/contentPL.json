@@ -86,9 +86,10 @@
     },
     "contact": {
         "header": "Kontakt",
-        "contactOptions": "Można skontaktować sie ze mną drogą telefoniczną lub mailową:",
+        "mail": "E-mail: ",
+        "phoneNumber": "Numer telefonu: ",
         "form": {
-            "formInfo": "Można też wysłać do mnie wiadomość mailową w poniższym formularzu:",
+            "formInfo": "Fromularz kontaktowy:",
             "name": "Imie i nazwisko",
             "phone": "Numer telefonu (opcjonalne)",
             "message": "Treść wiadomości:",

@@ -19,7 +19,7 @@ import contentEN from "./data/contentEN.json";
 function App() {
   const [open, setOpen] = useState(false);
   const [language, setLanguage] = useState("PL");
-  const [mode, setMode] = useState("bright");
+  const [mode, setMode] = useState("dark");
 
   let content = language == "PL" ? contentPL : contentEN;
 
