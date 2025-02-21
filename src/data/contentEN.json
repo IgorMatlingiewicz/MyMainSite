@@ -17,19 +17,23 @@
         "header": "Education",
         "places": [
             {
-                "title": "Silesian University of Technology in Gliwice (2023 - present)",
+                "title": "Silesian University of Technology in Gliwice",
+                "more": "(2023 - present)",
                 "description": "Field of study: Computer Science"
             },
             {
-                "title": "Techniczne Zakłady Naukowe w Częstochowie (Technical Secondary School) (2019-2023)",
+                "title": "Techniczne Zakłady Naukowe w Częstochowie (Technical Secondary School)",
+                "more": "(2019-2023)",
                 "description": "Field of study: IT Technician"
             },
             {
-                "title": "EduPlus – Two-week Erasmus+ internship",
+                "title": "EduPlus",
+                "more": "– Two-week Erasmus+ internship",
                 "description": "Internship where I was developing applications using Windows Forms technology in an English-speaking team"
             },
             {
-                "title": "Jupiter – School of Frontend and Game Development (2021 - 2023)",
+                "title": "Jupiter",
+                "more": "– School of Frontend and Game Development (2021 - 2023)",
                 "description": "Courses in web development"
             }
         ]

@@ -17,19 +17,23 @@
         "header": "Edukacja",
         "places": [
             {
-                "title": "Politechnika Śląska w Gliwicach (2023 – obecnie)",
+                "title": "Politechnika Śląska w Gliwicach",
+                "more": "(2023 – obecnie)",
                 "description": "Kierunek: Informatyka"
             },
             {
-                "title": "Techniczne Zakłady Naukowe w Częstochowie (2019-2023)",
+                "title": "Techniczne Zakłady Naukowe w Częstochowie",
+                "more": "(2019-2023)",
                 "description": "Kierunek: Technik Informatyk"
             },
             {
-                "title": "EduPlus – dwutygodniowe praktyki z Erasmus+",
+                "title": "EduPlus",
+                "more": "– dwutygodniowe praktyki z Erasmus+",
                 "description": "Praktyki podczas których programowałem aplikacje w technologii Windows Forms w anglojęzycznym zespole"
             },
             {
-                "title": "Jupiter – szkoła frontendu i tworzenia gier (2021-2023)",
+                "title": "Jupiter",
+                "more": "– szkoła frontendu i tworzenia gier (2021-2023)",
                 "description": "Zajęcia z tworzenia stron internetowych"
             }
         ]
