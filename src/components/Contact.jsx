@@ -124,19 +124,19 @@ export default function Contact({ language, mode }) {
                 </Col>
             </Row>
 
-            <Modal show={showModal} onHide={() => setShowModal(false)} centered data-bs-theme={isDark ? "dark" : "light"}>
-                <Modal.Header closeButton>
+            <Modal show={showModal} onHide={() => setShowModal(false)} centered>
+                <Modal.Header closeButton className={isDark ? "bg-dark text-light border-secondary" : ""}>
                     <Modal.Title>
                         {formError
                             ? <><i className="bi bi-x-circle-fill text-danger me-2"></i>{content.contact.modal.error.title}</>
-                            : <><i className="bi bi-check-circle-fill text-success me-2"></i>{content.contact.modal.success.title}</>
+                            : <><i className="bi bi-check-circle-fill me-2" style={{ color: 'var(--accent)' }}></i>{content.contact.modal.success.title}</>
                         }
                     </Modal.Title>
                 </Modal.Header>
-                <Modal.Body>
+                <Modal.Body className={isDark ? "bg-dark text-light" : ""}>
                     {formError ? formError : content.contact.modal.success["message"]}
                 </Modal.Body>
-                <Modal.Footer>
+                <Modal.Footer className={isDark ? "bg-dark border-secondary" : ""}>
                     <Button variant={isDark ? "outline-light" : "secondary"} onClick={() => setShowModal(false)}>
                         {content.contact.modal["button"]}
                     </Button>
