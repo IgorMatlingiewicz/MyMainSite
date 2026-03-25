@@ -260,6 +260,9 @@ $dark: #1a1d23;
   font-weight: 600;
 }
 
+// Modal
+.modal-content { overflow: hidden; }
+
 // Ikony kontaktowe
 .contact-icon-wrap {
   width: 2.4rem;
