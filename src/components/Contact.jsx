@@ -125,7 +125,7 @@ export default function Contact({ language, mode }) {
             </Row>
 
             <Modal show={showModal} onHide={() => setShowModal(false)} centered>
-                <Modal.Header closeButton className={isDark ? "bg-dark text-light border-secondary" : ""}>
+                <Modal.Header closeButton closeVariant={isDark ? "white" : undefined} className={isDark ? "bg-dark text-light border-secondary" : ""}>
                     <Modal.Title>
                         {formError
                             ? <><i className="bi bi-x-circle-fill text-danger me-2"></i>{content.contact.modal.error.title}</>
@@ -137,7 +137,7 @@ export default function Contact({ language, mode }) {
                     {formError ? formError : content.contact.modal.success["message"]}
                 </Modal.Body>
                 <Modal.Footer className={isDark ? "bg-dark border-secondary" : ""}>
-                    <Button variant={isDark ? "outline-light" : "secondary"} onClick={() => setShowModal(false)}>
+                    <Button variant={isDark ? "outline-light" : "outline-dark"} onClick={() => setShowModal(false)}>
                         {content.contact.modal["button"]}
                     </Button>
                 </Modal.Footer>

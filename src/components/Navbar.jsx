@@ -9,7 +9,13 @@ export default function AppNavbar({ setLanguage, language, setMode, mode }) {
 
   const [expanded, setExpanded] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
+  const [introReady, setIntroReady] = useState(false);
   const navbarRef = useRef(null);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setIntroReady(true), 1000);
+    return () => clearTimeout(timer);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -64,8 +70,14 @@ export default function AppNavbar({ setLanguage, language, setMode, mode }) {
             <Nav.Link className={`nav-link-animated ${activeSection === 'contact' ? 'active' : ''}`} onClick={() => handleLinkClick('contact')}>{content.navbar["contact"]}</Nav.Link>
           </Nav>
           <div>
-            <Button variant="" size="sm" className="navbar-btn" onClick={() => setMode(mode === "dark" ? "light" : "dark")}><i className={mode === "dark" ? "bi bi-moon" : "bi bi-brightness-high"}></i></Button>
-            <Button variant="" size="sm" className="navbar-btn ms-2" onClick={() => setLanguage(language === "PL" ? "EN" : "PL")}>{language}</Button>
+            <Button variant="" size="sm" className={`navbar-btn navbar-icon-btn${introReady ? ' navbar-btn-intro' : ''}`} onClick={() => setMode(mode === "dark" ? "light" : "dark")}>
+              <span className="icon-default"><i className={mode === "dark" ? "bi bi-moon" : "bi bi-brightness-high"}></i></span>
+              <span className="icon-hover"><i className={mode === "dark" ? "bi bi-brightness-high" : "bi bi-moon"}></i></span>
+            </Button>
+            <Button variant="" size="sm" className={`navbar-btn navbar-icon-btn ms-2${introReady ? ' navbar-btn-intro navbar-btn-intro-delay' : ''}`} onClick={() => setLanguage(language === "PL" ? "EN" : "PL")}>
+              <span className="icon-default">{language}</span>
+              <span className="icon-hover">{language === "PL" ? "EN" : "PL"}</span>
+            </Button>
           </div>
         </Navbar.Collapse>
       </Container>
