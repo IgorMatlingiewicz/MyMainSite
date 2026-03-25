@@ -5,12 +5,12 @@ import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Modal from 'react-bootstrap/Modal';
 
-
 import contentPL from "../data/contentPL.json";
 import contentEN from "../data/contentEN.json";
 
-export default function Contact({ language }) {
-    let content = language == "PL" ? contentPL : contentEN;
+export default function Contact({ language, mode }) {
+    let content = language === "PL" ? contentPL : contentEN;
+    const isDark = mode === 'dark';
 
     const [showModal, setShowModal] = useState(false);
     const [formError, setFormError] = useState(null);
@@ -37,59 +37,107 @@ export default function Contact({ language }) {
             });
     };
 
+    const inputClass = isDark ? 'bg-dark text-light border-secondary' : '';
+
     return (
         <>
-            <h4><i className="bi bi-envelope"></i> {content.contact.mail}igor.matlingiewicz@gmail.com</h4>
-            <h4><i className="bi bi-telephone"></i> {content.contact.phoneNumber}697-327-580</h4>
-            <h4><i className="bi bi-chat-left-dots"></i> {content.contact.form['formInfo']}</h4>
+            <Row className="g-5">
+                {/* Lewa kolumna: dane kontaktowe */}
+                <Col md={4} xs={12}>
+                    <div className="d-flex flex-column gap-4">
+                        <div className="d-flex align-items-start gap-3">
+                            <div className="contact-icon-wrap">
+                                <i className="bi bi-envelope"></i>
+                            </div>
+                            <div>
+                                <div className="small opacity-50 mb-1">{content.contact.mail.replace(': ', '')}</div>
+                                <a href={`mailto:${content.contact.mailValue}`}
+                                   className={`fw-medium text-decoration-none ${isDark ? 'text-light' : 'text-dark'}`}>
+                                    {content.contact.mailValue}
+                                </a>
+                            </div>
+                        </div>
 
-            <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" onSubmit={handleSubmit}>
-                <input type="hidden" name="form-name" value="contact" />
-                <p hidden>
-                    <label>
-                        Don’t fill this out: <input name="bot-field" />
-                    </label>
-                </p>
-                <Row className="mb-3">
-                    <Form.Group as={Col} controlId="formGridEmail" md={4} xs={12}>
-                        <Form.Label>Email</Form.Label>
-                        <Form.Control type="email" placeholder="Email" required name='email' />
-                    </Form.Group>
+                        <div className="d-flex align-items-start gap-3">
+                            <div className="contact-icon-wrap">
+                                <i className="bi bi-telephone"></i>
+                            </div>
+                            <div>
+                                <div className="small opacity-50 mb-1">{content.contact.phoneNumber.replace(': ', '')}</div>
+                                <span className="fw-medium">{content.contact.phoneValue}</span>
+                            </div>
+                        </div>
 
-                    <Form.Group as={Col} controlId="formGridPassword" md={4} xs={12}>
-                        <Form.Label>{content.contact.form["name"]}</Form.Label>
-                        <Form.Control type="text" placeholder={content.contact.form["name"]} required name='name' />
-                    </Form.Group>
+                        <div className="d-flex align-items-start gap-3">
+                            <div className="contact-icon-wrap">
+                                <i className="bi bi-github"></i>
+                            </div>
+                            <div>
+                                <div className="small opacity-50 mb-1">GitHub</div>
+                                <a href="https://github.com/IgorMatlingiewicz" target="_blank" rel="noopener noreferrer"
+                                   className={`fw-medium text-decoration-none ${isDark ? 'text-light' : 'text-dark'}`}>
+                                    IgorMatlingiewicz
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </Col>
 
-                    <Form.Group as={Col} controlId="formGridPassword" md={4} xs={12}>
-                        <Form.Label>{content.contact.form["phone"]}</Form.Label>
-                        <Form.Control type="text" placeholder={content.contact.form["phone"]} name='phone' />
-                    </Form.Group>
-                </Row>
+                {/* Prawa kolumna: formularz */}
+                <Col md={8} xs={12}>
+                    <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" onSubmit={handleSubmit}>
+                        <input type="hidden" name="form-name" value="contact" />
+                        <p hidden>
+                            <label>Don't fill this out: <input name="bot-field" /></label>
+                        </p>
 
-                <Form.Group className="mb-3" controlId="formGridAddress1">
-                    <Form.Label>{content.contact.form["message"]}</Form.Label>
-                    <Form.Control as="textarea" placeholder={content.contact.form["message"]} rows={4} required name='message' />
-                </Form.Group>
+                        <Row className="mb-3">
+                            <Form.Group as={Col} md={6} xs={12} className="mb-3 mb-md-0" controlId="formEmail">
+                                <Form.Label className="small opacity-75">Email</Form.Label>
+                                <Form.Control type="email" placeholder="Email" required name="email" className={inputClass} />
+                            </Form.Group>
+                            <Form.Group as={Col} md={6} xs={12} controlId="formName">
+                                <Form.Label className="small opacity-75">{content.contact.form["name"]}</Form.Label>
+                                <Form.Control type="text" placeholder={content.contact.form["name"]} required name="name" className={inputClass} />
+                            </Form.Group>
+                        </Row>
 
-                <Form.Group className="mb-3" id="formGridCheckbox">
-                    <Form.Check type="checkbox" label={content.contact.form["agreement"]} required />
-                </Form.Group>
+                        <Form.Group className="mb-3" controlId="formPhone">
+                            <Form.Label className="small opacity-75">{content.contact.form["phone"]}</Form.Label>
+                            <Form.Control type="text" placeholder={content.contact.form["phone"]} name="phone" className={inputClass} />
+                        </Form.Group>
 
-                <Button variant="warning" type="submit" className='fw-bold'>
-                    {content.contact.form["submit"]}
-                </Button>
-            </form>
+                        <Form.Group className="mb-3" controlId="formMessage">
+                            <Form.Label className="small opacity-75">{content.contact.form["message"]}</Form.Label>
+                            <Form.Control as="textarea" placeholder={content.contact.form["message"]} rows={4} required name="message" className={inputClass} />
+                        </Form.Group>
 
-            <Modal show={showModal} onHide={() => setShowModal(false)} centered>
+                        <Form.Group className="mb-3" id="formCheckbox">
+                            <Form.Check type="checkbox" label={content.contact.form["agreement"]} required
+                                className="small opacity-75" />
+                        </Form.Group>
+
+                        <Button variant="primary" type="submit" className="px-4 fw-semibold btn-accent">
+                            {content.contact.form["submit"]}
+                        </Button>
+                    </form>
+                </Col>
+            </Row>
+
+            <Modal show={showModal} onHide={() => setShowModal(false)} centered data-bs-theme={isDark ? "dark" : "light"}>
                 <Modal.Header closeButton>
-                    <Modal.Title>{formError ? content.contact.modal.error.title : content.contact.modal.success.title}</Modal.Title>
+                    <Modal.Title>
+                        {formError
+                            ? <><i className="bi bi-x-circle-fill text-danger me-2"></i>{content.contact.modal.error.title}</>
+                            : <><i className="bi bi-check-circle-fill text-success me-2"></i>{content.contact.modal.success.title}</>
+                        }
+                    </Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                     {formError ? formError : content.contact.modal.success["message"]}
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button variant="secondary" onClick={() => setShowModal(false)}>
+                    <Button variant={isDark ? "outline-light" : "secondary"} onClick={() => setShowModal(false)}>
                         {content.contact.modal["button"]}
                     </Button>
                 </Modal.Footer>

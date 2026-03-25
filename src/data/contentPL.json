@@ -1,15 +1,22 @@
 {
     "navbar": {
-        "home": "Strona główna",
+        "home": "O mnie",
         "skills": "Umiejętności",
+        "experience": "Doświadczenie",
         "projects": "Projekty",
         "contact": "Kontakt"
     },
+    "hero": {
+        "greeting": "Cześć, jestem",
+        "tagline": "Web Developer · React & JavaScript",
+        "projectsBtn": "Zobacz projekty",
+        "cvBtn": "Pobierz CV"
+    },
     "aboutMe": {
-        "header": "O mnie",
-        "1": "Jestem ambitną, młodą osobą chętną do nabycia nowej wiedzy i doświadczenia w branży IT. Programowaniem i tworzeniem stron oraz aplikacji internetowych zainteresowałem się na początku technikum i od tej pory uczę się nowych rzeczy, języków i technologii, robiąc przy tym projekty, które można zobaczyć w moich repozytoriach",
-        "2": "Posiadam tytuł technika z informatyki i aktualnie studiuje informatykę na Politechnice Śląskiej. Szukam pracy, w której rozwinę swoje umiejętności i nabędę też nowe z pomocą bardziej doświadczonych ludzi. Dotychczas najwięcej pracowałem we frontendzie, zrobiłem kilka do dziś aktywnych stron, ale chciałbym się również rozwinąć w obszarze backendu.",
-        "3": "Strona ta ma być moim internetowym CV i opisać oraz pokazać moje zarówno umiejętności jak i doświadczenie. Niżej zamieszczę również formularz pozwalający sie skontaktować ze mną drogą mailową, oraz CV w postaci standardowego pliku PDF.",
+        "header": "Profil zawodowy",
+        "1": "Web developer z doświadczeniem komercyjnym w budowaniu aplikacji frontendowych i fullstackowych. Pracuję z React, JavaScript, HTML/CSS oraz integracją z backendami (REST API, PHP, SQL). Mam za sobą realizację projektów komercyjnych – od aplikacji webowych dla firm, przez sklepy internetowe, po rozwiązania z zakresu zarządzania danymi.",
+        "2": "Poza tworzeniem aplikacji zdobywam doświadczenie jako nauczyciel web developmentu i Pythona, co pozwala mi jasno przekazywać wiedzę i rozumieć potrzeby różnych odbiorców. Pracowałem zarówno samodzielnie – prowadząc projekty od konceptu po wdrożenie – jak i w zespołach, w tym w środowisku międzynarodowym.",
+        "3": "Stale szukam możliwości, by rozwijać swoje umiejętności, zdobywać nowe doświadczenia i poszerzać horyzonty w obszarze tworzenia aplikacji webowych.",
         "showText": "Czytaj więcej",
         "hideText": "Zwiń tekst"
     },
@@ -19,22 +26,41 @@
             {
                 "title": "Politechnika Śląska w Gliwicach",
                 "more": "(2023 – obecnie)",
-                "description": "Kierunek: Informatyka"
+                "description": "Kierunek: Informatyka",
+                "link": "https://www.polsl.pl"
             },
             {
                 "title": "Techniczne Zakłady Naukowe w Częstochowie",
                 "more": "(2019-2023)",
-                "description": "Kierunek: Technik Informatyk"
+                "description": "Kierunek: Technik Informatyk",
+                "link": "https://tzn.edu.pl"
             },
             {
                 "title": "EduPlus",
                 "more": "– dwutygodniowe praktyki z Erasmus+",
-                "description": "Praktyki podczas których programowałem aplikacje w technologii Windows Forms w anglojęzycznym zespole"
+                "description": "Praktyki podczas których programowałem aplikacje w technologii Windows Forms w anglojęzycznym zespole",
+                "link": "https://erasmusplus.org.pl"
             },
             {
                 "title": "Jupiter",
                 "more": "– szkoła frontendu i tworzenia gier (2021-2023)",
-                "description": "Zajęcia z tworzenia stron internetowych"
+                "description": "Zajęcia z tworzenia stron internetowych",
+                "link": "https://www.jupiter.czest.pl"
+            }
+        ]
+    },
+    "experience": {
+        "header": "Doświadczenie",
+        "places": [
+            {
+                "title": "Kodland",
+                "more": "kwiecień 2025 – obecnie",
+                "description": "Nauczyciel Python & Web Dev oraz Tech Support Manager – prowadzenie zajęć z Pythona i web developmentu, zarządzanie wsparciem technicznym."
+            },
+            {
+                "title": "EduPlus (Erasmus+)",
+                "more": "2022",
+                "description": "Staż programistyczny – tworzenie aplikacji okienkowych w Windows Forms w anglojęzycznym, międzynarodowym zespole."
             }
         ]
     },
@@ -42,28 +68,34 @@
         "header": "Umiejętności",
         "Frontend": {
             "CSS": "Potrafię stylować strony zarówno natywnym CSS jak i preprocesorem SCSS. Umiem tworzyć strony responsywne i znam bibliotekę Bootstrapa.",
-            "HTML": "Znam i umiem korzystać z wielu elementów strony dostępnych w HTML takich jak listy, tabele i wiele innych. Znam również znaczniki meta i umiem tworzyć poprawny układu strony np. stosować się do metodologii BEM.",
-            "JS": "Znam składnie języka i wbudowane w nim funkcje (pętle, tablice, instrukcje warunkowe, podstawy obiektowości). Potrafię operować na DOM poprzez standardowy JavaScript lub jQuery, renderować DOM na bazie JSON czytanego z publicznego API."
+            "HTML": "Znam i umiem korzystać z wielu elementów strony dostępnych w HTML takich jak listy, tabele i wiele innych. Znam również znaczniki meta i umiem tworzyć poprawny układ strony np. stosować się do metodologii BEM.",
+            "JS": "Znam składnię języka i wbudowane w nim funkcje (pętle, tablice, instrukcje warunkowe, podstawy obiektowości). Potrafię operować na DOM poprzez standardowy JavaScript lub jQuery, renderować DOM na bazie JSON czytanego z publicznego API."
         },
         "Backend": {
-            "CPP": "Znam składnie i funkcje języka. Potrafię operować na plikach i znam podstawy programowania obiektowego.",
-            "Python": "Znam podstawowe funkcje języka takich jak funkcje warunkowe, pętle, umiem operować na listach, plikach tekstowych i pisać własne funkcje.",
-            "SQL": "Potrafie koszystać z podstawowych poleceń takich jak select, update, where. Umiem filtrować i sortować dane. Jestem w stanie połączyć stronę z bazą danych i operować na nich przy pomocy PHP."
+            "PHP": "Znam PHP i używam go do łączenia stron z bazami danych, obsługi zapytań SQL oraz implementacji logiki serwerowej.",
+            "SQL": "Potrafię korzystać z poleceń takich jak SELECT, UPDATE, WHERE oraz JOIN. Umiem filtrować, sortować i łączyć dane. Znam relacyjny model danych i potrafię integrować bazę danych z aplikacją webową.",
+            "Python": "Znam składnię Pythona i jego wbudowane funkcje – pętle, operacje na listach, obsługę plików i pisanie własnych funkcji.",
+            "Java": "Znam składnię języka Java i programowanie obiektowe. Tworzyłem projekty z interfejsem okienkowym przy użyciu biblioteki Swing.",
+            "CPP": "Znam składnię i funkcje języka C++. Potrafię operować na plikach i znam programowanie obiektowe.",
+            "REST": "Potrafię pobierać i wysyłać dane poprzez REST API (fetch, JSON). Pracowałem z publicznymi API oraz wewnętrznymi API w projektach komercyjnych."
         },
-        "React": "Potrafię pracować z biblioteką React, tworzyć komponentów funkcyjne, pisać modułowy kod i znam składnie JSX. Dobrym przykładem mojej pracy w tej bibliotece jest ta strona, która została stworzona w tej właśnie bibliotece. Do jej stylowania użyłem biblioteki React-Bootstrap, która pozwala użyć gotowych komnonetów Reacta posiadających już style standardowego Bootstrapa. Do stworzenia strony użyłem również narzędzia Vite."
+        "React": "Potrafię pracować z biblioteką React – tworzę komponenty funkcyjne, zarządzam stanem (useState, useEffect), stosuję routing i piszę modułowy kod w JSX. Dobrym przykładem mojej pracy w React jest ta strona, stworzona z użyciem React i React-Bootstrap. Do budowania projektu użyłem narzędzia Vite."
     },
+
     "OtherInfo": {
         "otherSkillsHeader": "Inne umiejętności",
         "OtherSkills": [
-            "Github - podstawowa znajomość serwisu i związanych z nim poleceń w konsoli",
-            "Angielski - znajomość języka na poziomie B2",
-            "Photoshop - podstawowa znajomość programu i umiejętność modyfikowania grafiki"
+            "Github - znajomość serwisu i związanych z nim poleceń w konsoli",
+            "Postman - znajomość narzędzia do testowania i eksploracji REST API",
+            "Angielski - znajomość języka na poziomie C1",
+            "Photoshop - znajomość programu i umiejętność modyfikowania grafiki"
         ],
-        "coursesHeader": "Kursy i certyfikaty",
+"coursesHeader": "Kursy i certyfikaty",
         "Courses": [
-            "PCAP: Programming Essentials in Python",
-            "Udemy: React – Complete Guide 2025 (Academind) (w trakcie)",
-            "Udemy: Zaawansowane projekty w CSS i JavaScript (Samuraj Programowania)"
+            "PCAP: Programming Essentials in Python (Cisco Networking Academy)",
+            "Udemy: React – The Complete Guide 2025 (Academind)",
+            "Udemy: Zaawansowane projekty w CSS i JavaScript (Samuraj Programowania)",
+            "Egzamin INF.02 i INF.03 (kwalifikacje zawodowe – Technik Informatyk)"
         ]
     },
     "projects": {
@@ -72,7 +104,7 @@
         "SWAPI": {
             "title": "Star Wars API",
             "description": "Strona która pobiera dane z zewnętrznego API i wstawia je do tabeli, strona została stworzona z JavaScript  i Bootstrap.",
-            "description2": "Strona która pobiera dane z zewnętrznego API i wstawia je do dynamicznie tworzonej tabeli. Działanie strony zostało stworzone w JavaScript, a do stylowania strony użyłem biblioteki Bootstrap. Stronę stworzyłem by pokazać moje umięjętności działania z publicznym API. Strona posiada menu gdzie można wybrać czy chcemy przeglądać baze postaci czy planet z uniwersum Star Wars.",
+            "description2": "Strona która pobiera dane z zewnętrznego API i wstawia je do dynamicznie tworzonej tabeli. Działanie strony zostało stworzone w JavaScript, a do stylowania strony użyłem biblioteki Bootstrap. Stronę stworzyłem by pokazać moje umiejętności działania z publicznym API. Strona posiada menu gdzie można wybrać czy chcemy przeglądać baze postaci czy planet z uniwersum Star Wars.",
             "link": "https://github.com/IgorMatlingiewicz/StarWarsApi"
         },
         "ticTacToe": {
@@ -84,17 +116,43 @@
         "nightSky": {
             "title": "Night Sky",
             "description": "Mały projekt z elementem canvas pokazujący nocne niebo z losowo generowanymi konstelacjami.",
-            "description2": "Mały projekt przy użyciu elementu canvas który pokazuje gwieździste niebo i losowo generowane konstelacje łączace te gwiazdy. Porjekt głównie stworzony przy użyciu JavaScript.",
+            "description2": "Mały projekt przy użyciu elementu canvas który pokazuje gwieździste niebo i losowo generowane konstelacje łączące te gwiazdy. Projekt głównie stworzony przy użyciu JavaScript.",
             "link": "https://github.com/IgorMatlingiewicz/NightSky"
+        },
+        "qaDashboard": {
+            "title": "Dashboard analityczny QA",
+            "category": "Projekt komercyjny | 2024",
+            "tech": "JavaScript, HTML/CSS, REST API, JSON",
+            "description": "Komercyjna aplikacja webowa do wizualizacji wyników testów automatycznych – wykresy, filtry i raporty dla zespołu QA.",
+            "description2": "Aplikacja webowa stworzona na zlecenie dla firmy, służąca do monitorowania i wizualizacji wyników testów automatycznych. Umożliwia przeglądanie danych z różnych projektów i przebiegów testów w jednym miejscu – wykresy, filtry, raporty. Dane pobierane są dynamicznie z REST API w formacie JSON.",
+            "link": null
+        },
+        "ecommerceTrailers": {
+            "title": "Sklep e-commerce – sprzedaż przyczep",
+            "category": "Projekt komercyjny | 2024",
+            "tech": "JavaScript, PHP, SQL, HTML/CSS, Shopify",
+            "description": "Komercyjny sklep internetowy wdrożony na platformie Shopify z customizacją motywu i logiką JavaScript.",
+            "description2": "Sklep internetowy stworzony dla klienta na platformie Shopify. Odpowiadałem za całość frontendu – dostosowanie motywu, implementację logiki JavaScript, responsywność oraz integrację z systemem zamówień. Projekt obejmował bazę danych produktów i panel administracyjny.",
+            "link": null
+        },
+        "wordle": {
+            "title": "Wordle (klon gry)",
+            "category": "Projekt akademicki | 2026",
+            "tech": "Java, Swing, OOP",
+            "description": "Klon popularnej gry słownej zaimplementowany w języku Java z interfejsem okienkowym.",
+            "description2": "Implementacja gry Wordle w Javie – logika gry, interfejs okienkowy (Swing), programowanie obiektowe. Planuję stworzyć ulepszoną, webową wersję tej gry, która zostanie udostępniona tutaj.",
+            "link": null
         }
     },
     "contact": {
         "header": "Kontakt",
         "mail": "E-mail: ",
+        "mailValue": "igor.matlingiewicz@gmail.com",
         "phoneNumber": "Numer telefonu: ",
+        "phoneValue": "697-327-580",
         "form": {
             "formInfo": "Formularz kontaktowy:",
-            "name": "Imie i nazwisko",
+            "name": "Imię i nazwisko",
             "phone": "Numer telefonu (opcjonalne)",
             "message": "Treść wiadomości:",
             "agreement": "* Wyrażam zgodę na przetwarzanie przez właściciela strony moich danych osobowych zawartych w formularzu w celu udzielenia odpowiedzi na zadane poprzez formularz pytania.",
@@ -103,7 +161,7 @@
         "modal": {
             "success": {
                 "title": "Sukces!",
-                "message": "Twója wiadomość została poprawnie wysłana."
+                "message": "Twoja wiadomość została poprawnie wysłana."
             },
             "error": {
                 "title": "Błąd!",
@@ -113,8 +171,11 @@
         }
     },
     "links": {
-        "header": "Linki",
         "github": "Moje konto GitHub",
         "CV": "Moje CV w formie PDF"
+    },
+    "footer": {
+        "subtitle": "Web Developer · React & JavaScript",
+        "copyright": "Wszelkie prawa zastrzeżone"
     }
 }

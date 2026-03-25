@@ -1,5 +1,19 @@
+// Czcionka
+$font-family-base: 'Inter', sans-serif;
+
 // Definiujemy nowe wartości kolorów
 $primary: #497bc5;
+$accent: #35c5be;
+
+// Akcent dynamiczny: cyan w dark, ciemny teal w light
+:root {
+  --accent: #0d9488;
+  --accent-glow: rgba(13, 148, 136, 0.2);
+}
+[data-mode="dark"] {
+  --accent: #35c5be;
+  --accent-glow: rgba(53, 197, 190, 0.2);
+}
 $secondary: #0c0e13;
 $success: #3b529e;
 $danger: #c0f0ff;
@@ -53,5 +67,277 @@ $dark: #1a1d23;
   max-height: 75vh; /* Nie pozwala, aby obrazek był zbyt wysoki */
 }
 
+// Hero section
+.hero-section {
+  min-height: calc(100vh - 66px);
+  display: flex;
+  align-items: center;
+}
+
+.hero-greeting {
+  font-size: 1.25rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.hero-name {
+  font-size: clamp(2.8rem, 6vw, 5rem);
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.hero-tagline {
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+}
+
+.hero-scroll-arrow {
+  i {
+    font-size: 2rem;
+    animation: bounce 2s ease-in-out infinite;
+  }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(10px); }
+}
+
+// Naprzemienne tła sekcji
+.section-alt-dark {
+  background-color: #21252e;
+}
+.section-alt-light {
+  background-color: #f5f9ff;
+}
+
+// Nagłówki sekcji z akcentem
+.section-title {
+  display: inline-block;
+  padding-bottom: 0.4rem;
+  border-bottom: 3px solid var(--accent);
+  margin-bottom: 1.75rem;
+}
+
+// Cień na kartach
+.card {
+  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.2s ease;
+  border: none !important;
+
+  &.bg-dark {
+    box-shadow: 0 2px 14px rgba(0, 0, 0, 0.45);
+  }
+
+  &:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  }
+  &.bg-dark:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+  }
+}
+
+// Kafelki umiejętności
+.skill-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 0.5rem;
+  border-radius: 0.6rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+  text-align: center;
+  gap: 0.45rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  user-select: none;
+
+  .skill-tile-logo {
+    width: 2rem;
+    height: 2rem;
+    object-fit: contain;
+  }
+
+  .skill-tile-abbr {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 0.35rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    font-weight: 700;
+    background-color: var(--accent);
+    color: white;
+    letter-spacing: 0.02em;
+  }
+
+  &.skill-tile-dark {
+    background-color: #2a2f3a;
+    color: #cdd5e0;
+    &:hover { background-color: #353b48; transform: translateY(-2px); }
+    &.active { background-color: var(--accent); color: #1a1d23; }
+  }
+
+  &.skill-tile-light {
+    background-color: #e4eef8;
+    color: #2d4a70;
+    &:hover { background-color: #d0e2f4; transform: translateY(-2px); }
+    &.active { background-color: var(--accent); color: #1a1d23; }
+  }
+}
+
+.skill-description-panel {
+  padding: 1.25rem 1.5rem;
+  border-radius: 0.6rem;
+  border-left: 4px solid var(--accent);
+  transition: all 0.2s ease;
+
+  &.panel-dark { background-color: #2a2f3a; }
+  &.panel-light { background-color: #eaf2fc; }
+}
+
+// Timeline
+.timeline {
+  position: relative;
+  padding-left: 1.75rem;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0.3rem;
+    top: 0.4rem;
+    bottom: 0.4rem;
+    width: 2px;
+    background: linear-gradient(to bottom, $primary, rgba(73, 123, 197, 0.15));
+    border-radius: 1px;
+  }
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 1.4rem;
+
+  &:last-child { margin-bottom: 0; }
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -1.74rem;
+  top: 0.35rem;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-glow);
+}
+
+// Linki w timeline
+.timeline-link {
+  text-decoration: none;
+  display: inline-block;
+  transition: transform 0.18s ease, color 0.18s ease;
+
+  &:hover {
+    transform: translateX(4px);
+    text-decoration: underline;
+  }
+}
+
+// Hover lift na kartach projektów
+.project-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+  &:hover {
+    transform: translateY(-5px);
+  }
+}
+
+// Badge projektu
+.project-type-badge {
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+// Ikony kontaktowe
+.contact-icon-wrap {
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 0.5rem;
+  background-color: var(--accent);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+// Navbar
+.navbar {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(6px);
+}
+
+.nav-link-animated {
+  position: relative;
+  padding-bottom: 4px !important;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent);
+    border-radius: 1px;
+    transition: width 0.25s ease;
+  }
+
+  &.active::after {
+    width: 100%;
+  }
+}
+
 // Importujemy Bootstrapa po nadpisaniu zmiennych
 @import "bootstrap/scss/bootstrap";
+
+// Placeholder w dark mode (po Bootstrapie żeby nadpisać)
+.form-control.bg-dark::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+// Przycisk akcentowy (kontakt)
+.btn.btn-accent {
+  background-color: var(--accent);
+  border-color: var(--accent);
+  color: #0d1a2e;
+  font-weight: 600;
+  transition: filter 0.2s ease;
+
+  &:hover, &:focus {
+    filter: brightness(1.1);
+    background-color: var(--accent);
+    border-color: var(--accent);
+    color: #0d1a2e;
+    box-shadow: none;
+  }
+}
+
+// Przyciski navbar (po Bootstrapie żeby nadpisać)
+.btn.navbar-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 500;
+  transition: background 0.2s ease, border-color 0.2s ease;
+
+  &:hover, &:focus {
+    background: rgba(255, 255, 255, 0.22);
+    border-color: rgba(255, 255, 255, 0.8);
+    color: white;
+    box-shadow: none;
+  }
+}

@@ -1,15 +1,22 @@
 {
     "navbar": {
-        "home": "Home page",
+        "home": "About Me",
         "skills": "Skills",
-        "projects": "Projekty",
+        "experience": "Experience",
+        "projects": "Projects",
         "contact": "Contact"
     },
+    "hero": {
+        "greeting": "Hi, I'm",
+        "tagline": "Web Developer · React & JavaScript",
+        "projectsBtn": "See my projects",
+        "cvBtn": "Download CV"
+    },
     "aboutMe": {
-        "header": "About me",
-        "1": "I am an ambitious young person eager to acquire new knowledge and experience in the IT industry. I became interested in programming and creating websites and web applications at the beginning of technical school, and since then I have been learning new things, languages, and technologies, working on projects that can be seen in my repositories.",
-        "2": "I hold a technician degree in IT and am currently studying computer science at the Silesian University of Technology. I am looking for a job where I can develop my skills and gain new ones with the help of more experienced professionals. So far, I have worked mostly in frontend development, creating several websites that are still active today, but I would also like to expand into backend development.",
-        "3": "This website serves as my online CV to describe and showcase both my skills and experience. Below, I also include a contact form allowing you to reach me by email, as well as my CV in the form of a standard PDF file.",
+        "header": "Professional profile",
+        "1": "Web developer with commercial experience building frontend and fullstack web applications. I work with React, JavaScript, HTML/CSS and backend integration (REST API, PHP, SQL). I have delivered commercial projects – from web applications for businesses to online stores and data management solutions.",
+        "2": "Alongside development, I gain experience as a web development and Python instructor, which allows me to communicate technical concepts clearly and understand the needs of diverse audiences. I have worked both independently – leading projects from concept to deployment – and in teams, including international environments.",
+        "3": "I constantly seek opportunities to develop my skills, gain new experience, and broaden my horizons in web application development.",
         "showText": "Read more",
         "hideText": "Hide text"
     },
@@ -19,22 +26,41 @@
             {
                 "title": "Silesian University of Technology in Gliwice",
                 "more": "(2023 - present)",
-                "description": "Field of study: Computer Science"
+                "description": "Field of study: Computer Science",
+                "link": "https://www.polsl.pl"
             },
             {
                 "title": "Techniczne Zakłady Naukowe w Częstochowie (Technical Secondary School)",
                 "more": "(2019-2023)",
-                "description": "Field of study: IT Technician"
+                "description": "Field of study: IT Technician",
+                "link": "https://tzn.edu.pl"
             },
             {
                 "title": "EduPlus",
                 "more": "– Two-week Erasmus+ internship",
-                "description": "Internship where I was developing applications using Windows Forms technology in an English-speaking team"
+                "description": "Internship where I was developing applications using Windows Forms technology in an English-speaking team",
+                "link": "https://erasmusplus.org.pl"
             },
             {
                 "title": "Jupiter",
                 "more": "– School of Frontend and Game Development (2021 - 2023)",
-                "description": "Courses in web development"
+                "description": "Courses in web development",
+                "link": "https://www.jupiter.czest.pl"
+            }
+        ]
+    },
+    "experience": {
+        "header": "Experience",
+        "places": [
+            {
+                "title": "Kodland",
+                "more": "April 2025 – present",
+                "description": "Python & Web Dev instructor and Tech Support Manager – teaching Python and web development classes, managing technical support."
+            },
+            {
+                "title": "EduPlus (Erasmus+)",
+                "more": "2022",
+                "description": "Development internship – building Windows Forms applications in an English‑speaking international team."
             }
         ]
     },
@@ -46,24 +72,29 @@
             "JS": "I know the syntax and built-in functions of JavaScript (loops, arrays, conditional statements, basic object-oriented concepts). I can manipulate the DOM using standard JavaScript or jQuery, render the DOM using JSON data fetched from a public API."
         },
         "Backend": {
-            "CPP": "I am familiar with C++ syntax and functions. I can handle file operations and understand the basics of object-oriented programming.",
-            "Python": "I have knowledge of fundamental Python functions such as conditionals, loops, list operations, text file handling, and writing my own functions.",
-            "SQL": "I can use basic SQL commands such as SELECT, UPDATE, and WHERE. I know how to filter and sort data. I am capable of connecting a website to a database and handling it using PHP."
+            "PHP": "I know PHP and use it to connect websites to databases, handle SQL queries, and implement server-side logic.",
+            "SQL": "I can use SQL commands such as SELECT, UPDATE, WHERE, and JOIN. I know how to filter, sort, and join data. I am capable of integrating a database with a web application.",
+            "Python": "I know Python syntax and its built-in functions – loops, list operations, file handling, and writing my own functions.",
+            "Java": "I know Java syntax and object-oriented programming. I have created projects with a windowed interface using the Swing library.",
+            "CPP": "I know C++ syntax and functions. I can handle file operations and know object-oriented programming.",
+            "REST": "I can fetch and send data via REST API (fetch, JSON). I have worked with public APIs as well as internal APIs in commercial projects."
         },
-        "React": "I am proficient in working with the React library, developing functional components, writing modular code, and understanding JSX syntax. A good example of my work in React is this website, which was built using this library. For styling, I used the React-Bootstrap library, which provides ready-to-use React components with built-in Bootstrap styles. I also used the Vite tool to create this project."
+        "React": "I am proficient in working with the React library – I create functional components, manage state (useState, useEffect), apply routing, and write modular JSX code. A good example of my React work is this website, built with React and React-Bootstrap. I used Vite as the build tool."
     },
     "OtherInfo": {
         "otherSkillsHeader": "Other skills",
         "OtherSkills": [
-            "Github - basic knowledge of the platform and related console commands",
-            "English - B2 level proficiency",
-            "Photoshop - basic knowledge of the program and the ability to modify graphics"
+            "Github - knowledge of the platform and related console commands",
+            "Postman - knowledge of the tool for testing and exploring REST APIs",
+            "English - C1 level proficiency",
+            "Photoshop - knowledge of the program and the ability to modify graphics"
         ],
-        "coursesHeader": "Courses and certificates",
+"coursesHeader": "Courses and certificates",
         "Courses": [
-            "PCAP: Programming Essentials in Python",
-            "Udemy: React – Complete Guide 2025 (Academind) (in progress)",
-            "Udemy: Zaawansowane projekty w CSS i JavaScript (Samuraj Programowania)"
+            "PCAP: Programming Essentials in Python (Cisco Networking Academy)",
+            "Udemy: React – The Complete Guide 2025 (Academind)",
+            "Udemy: Zaawansowane projekty w CSS i JavaScript (Samuraj Programowania)",
+            "INF.02 and INF.03 exams (vocational qualifications – IT Technician)"
         ]
     },
     "projects": {
@@ -86,12 +117,38 @@
             "description": "Small canvas project that shows night sky with stars and random generated constellations.",
             "description2": "Small canvas project that shows night sky with stars and randomly generated constellations with them. For this project I was mainly using canvas with JavaScript.",
             "link": "https://github.com/IgorMatlingiewicz/NightSky"
+        },
+        "qaDashboard": {
+            "title": "QA Analytics Dashboard",
+            "category": "Commercial project | 2024",
+            "tech": "JavaScript, HTML/CSS, REST API, JSON",
+            "description": "Commercial web application for visualizing automated test results – charts, filters, and reports for a QA team.",
+            "description2": "Web application built on commission for a company, used to monitor and visualize automated test results. Allows browsing data from multiple projects and test runs in one place – charts, filters, reports. Data is fetched dynamically from a REST API in JSON format.",
+            "link": null
+        },
+        "ecommerceTrailers": {
+            "title": "E-commerce Store – Trailer Sales",
+            "category": "Commercial project | 2024",
+            "tech": "JavaScript, PHP, SQL, HTML/CSS, Shopify",
+            "description": "Commercial online store deployed on Shopify with custom theme and JavaScript logic.",
+            "description2": "Online store built for a client on the Shopify platform. I was responsible for the entire frontend – theme customization, JavaScript logic, responsiveness, and integration with the order management system. The project included a product database and an admin panel.",
+            "link": null
+        },
+        "wordle": {
+            "title": "Wordle (game clone)",
+            "category": "Academic project | 2026",
+            "tech": "Java, Swing, OOP",
+            "description": "Clone of the popular word game implemented in Java with a windowed interface.",
+            "description2": "Implementation of the Wordle game in Java – game logic, windowed interface (Swing), object-oriented programming. I plan to create an improved, web-based version of this game that will be linked here.",
+            "link": null
         }
     },
     "contact": {
         "header": "Contact",
         "mail": "E-mail: ",
+        "mailValue": "igor.matlingiewicz@gmail.com",
         "phoneNumber": "Phone number: ",
+        "phoneValue": "697-327-580",
         "form": {
             "formInfo": "Contact form:",
             "name": "Name and surname",
@@ -113,8 +170,11 @@
         }
     },
     "links": {
-        "header": "Links",
         "github": "My GitHub account",
         "CV": "My CV in PDF form"
+    },
+    "footer": {
+        "subtitle": "Web Developer · React & JavaScript",
+        "copyright": "All rights reserved"
     }
 }

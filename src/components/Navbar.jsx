@@ -1,14 +1,41 @@
-import React, { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Navbar, Nav, Container, Button } from 'react-bootstrap';
 
 import contentPL from "../data/contentPL.json";
 import contentEN from "../data/contentEN.json";
 
 export default function AppNavbar({ setLanguage, language, setMode, mode }) {
-  let content = language == "PL" ? contentPL : contentEN;
+  let content = language === "PL" ? contentPL : contentEN;
 
   const [expanded, setExpanded] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
   const navbarRef = useRef(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = ['home', 'skills', 'projects', 'contact'];
+
+      const isAtBottom = window.innerHeight + window.scrollY >= document.body.offsetHeight - 60;
+      if (isAtBottom) {
+        setActiveSection('contact');
+        return;
+      }
+
+      const scrollPosition = window.scrollY + navbarRef.current.offsetHeight + 50;
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const section = document.getElementById(sections[i]);
+        if (section && section.offsetTop <= scrollPosition) {
+          setActiveSection(sections[i]);
+          break;
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Check initial position
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const handleLinkClick = (id) => {
     setExpanded(false);
@@ -25,20 +52,20 @@ export default function AppNavbar({ setLanguage, language, setMode, mode }) {
     window.scrollTo({ top: offset, behavior: 'smooth' });
   };
   return (
-    <Navbar bg={mode == "dark" ? "secondary" : "primary"} variant="dark" expand="lg" className='m-0 sticky-top' expanded={expanded} ref={navbarRef}>
+    <Navbar bg={mode === "dark" ? "secondary" : "primary"} variant="dark" expand="lg" className='m-0 sticky-top' expanded={expanded} ref={navbarRef}>
       <Container>
-        <Navbar.Brand className="cursor-pointer" onClick={() => handleLinkClick('home')}><h2>Igor Matlingiewicz</h2></Navbar.Brand>
+        <Navbar.Brand className="cursor-pointer fw-bold fs-4" onClick={() => handleLinkClick('home')}>Igor Matlingiewicz</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={() => setExpanded(expanded ? false : true)} />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link onClick={() => handleLinkClick('home')}>{content.navbar["home"]}</Nav.Link>
-            <Nav.Link onClick={() => handleLinkClick('skills')}>{content.navbar["skills"]}</Nav.Link>
-            <Nav.Link onClick={() => handleLinkClick('projects')}>{content.navbar["projects"]}</Nav.Link>
-            <Nav.Link onClick={() => handleLinkClick('contact')}>{content.navbar["contact"]}</Nav.Link>
+            <Nav.Link className={`nav-link-animated ${activeSection === 'home' ? 'active' : ''}`} onClick={() => handleLinkClick('home')}>{content.navbar["home"]}</Nav.Link>
+            <Nav.Link className={`nav-link-animated ${activeSection === 'skills' ? 'active' : ''}`} onClick={() => handleLinkClick('skills')}>{content.navbar["skills"]}</Nav.Link>
+            <Nav.Link className={`nav-link-animated ${activeSection === 'projects' ? 'active' : ''}`} onClick={() => handleLinkClick('projects')}>{content.navbar["projects"]}</Nav.Link>
+            <Nav.Link className={`nav-link-animated ${activeSection === 'contact' ? 'active' : ''}`} onClick={() => handleLinkClick('contact')}>{content.navbar["contact"]}</Nav.Link>
           </Nav>
           <div>
-            <Button variant="warning" onClick={() => setMode(mode == "dark" ? "bright" : "dark")}><i className={mode == "dark" ? "bi bi-moon" : "bi bi-brightness-high"}></i></Button>
-            <Button variant="warning" className="mx-5" onClick={() => setLanguage(language == "PL" ? "EN" : "PL")}>{language}</Button>
+            <Button variant="" size="sm" className="navbar-btn" onClick={() => setMode(mode === "dark" ? "light" : "dark")}><i className={mode === "dark" ? "bi bi-moon" : "bi bi-brightness-high"}></i></Button>
+            <Button variant="" size="sm" className="navbar-btn ms-2" onClick={() => setLanguage(language === "PL" ? "EN" : "PL")}>{language}</Button>
           </div>
         </Navbar.Collapse>
       </Container>
