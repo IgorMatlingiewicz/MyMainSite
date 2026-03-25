@@ -52,14 +52,17 @@ function App() {
           <Row className="mb-4">
             <Col md={6} xs={12} className="mb-4 mb-md-0" data-aos="fade-right">
               <h4 className="text-primary mb-3">{content.aboutMe["header"]}</h4>
-              <div className="mb-3">
-                <p className="about-icon mb-2">💼 {content.aboutMe["1"]}</p>
+              <div className="about-item mb-4">
+                <div className="about-item-icon"><i className="fa-solid fa-briefcase"></i></div>
+                <p className="mb-0">{content.aboutMe["1"]}</p>
               </div>
-              <div className="mb-3">
-                <p className="about-icon mb-2">🎓 {content.aboutMe["2"]}</p>
+              <div className="about-item mb-4">
+                <div className="about-item-icon"><i className="fa-solid fa-chalkboard-user"></i></div>
+                <p className="mb-0">{content.aboutMe["2"]}</p>
               </div>
-              <div className="mb-3">
-                <p className="about-icon mb-2">🚀 {content.aboutMe["3"]}</p>
+              <div className="about-item mb-4">
+                <div className="about-item-icon"><i className="fa-solid fa-rocket"></i></div>
+                <p className="mb-0">{content.aboutMe["3"]}</p>
               </div>
             </Col>
             <Col md={6} xs={12} data-aos="fade-left">

@@ -263,6 +263,33 @@ $dark: #1a1d23;
 // Modal
 .modal-content { overflow: hidden; }
 
+// Ikony "O mnie"
+.about-item {
+  position: relative;
+  padding-left: 3.2rem;
+
+  .about-item-icon {
+    position: absolute;
+    left: 0;
+    top: 0.1rem;
+    font-size: 1.9rem;
+    color: var(--accent);
+    opacity: 0.45;
+    line-height: 1;
+    transition: opacity 0.3s ease;
+  }
+
+  &:hover .about-item-icon { opacity: 0.85; }
+
+  [data-mode="dark"] & .about-item-icon { opacity: 0.5; }
+  [data-mode="dark"] &:hover .about-item-icon { opacity: 0.75; }
+
+  @media (max-width: 576px) {
+    padding-left: 2.4rem;
+    .about-item-icon { font-size: 1.4rem; }
+  }
+}
+
 // Ikony kontaktowe
 .contact-icon-wrap {
   width: 2.4rem;
