@@ -1,8 +1,11 @@
 import { useState, useEffect } from 'react'
+import { Routes, Route } from 'react-router-dom'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 
+import DlaFirmPage from './pages/DlaFirmPage';
 import AppNavbar from './components/Navbar';
+import PageSwitcher from './components/PageSwitcher';
 import Education from './components/Education';
 import Experience from './components/Experience';
 import Skills from './components/Skills';
@@ -37,8 +40,14 @@ function App() {
   const altBg  = mode === "dark" ? "section-alt-dark text-light" : "section-alt-light text-dark";
 
   return (
-    <div className={mainBg} data-mode={mode}>
+    <Routes>
+      <Route path="/dla-firm" element={
+        <DlaFirmPage language={language} setLanguage={setLanguage} mode={mode} setMode={setMode} />
+      } />
+      <Route path="/" element={
+      <div className={mainBg} data-mode={mode}>
       <AppNavbar setLanguage={setLanguage} language={language} setMode={setMode} mode={mode}/>
+      <PageSwitcher language={language} mode={mode} />
 
       {/* Sekcja: O mnie */}
       <section id="home" className={`${mainBg} py-5`} style={{ position: 'relative', overflow: 'hidden' }}>
@@ -133,6 +142,8 @@ function App() {
 
       <Footer language={language} mode={mode}/>
     </div>
+      } />
+    </Routes>
   )
 }
 

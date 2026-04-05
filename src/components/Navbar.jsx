@@ -4,7 +4,7 @@ import { Navbar, Nav, Container, Button } from 'react-bootstrap';
 import contentPL from "../data/contentPL.json";
 import contentEN from "../data/contentEN.json";
 
-export default function AppNavbar({ setLanguage, language, setMode, mode }) {
+export default function AppNavbar({ setLanguage, language, setMode, mode, customNavItems }) {
   let content = language === "PL" ? contentPL : contentEN;
 
   const [expanded, setExpanded] = useState(false);
@@ -18,6 +18,7 @@ export default function AppNavbar({ setLanguage, language, setMode, mode }) {
   }, []);
 
   useEffect(() => {
+    if (customNavItems) return;
     const handleScroll = () => {
       const sections = ['home', 'skills', 'projects', 'contact'];
 
@@ -38,10 +39,10 @@ export default function AppNavbar({ setLanguage, language, setMode, mode }) {
     };
 
     window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Check initial position
+    handleScroll();
 
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [customNavItems]);
 
   const handleLinkClick = (id) => {
     setExpanded(false);
@@ -57,17 +58,27 @@ export default function AppNavbar({ setLanguage, language, setMode, mode }) {
 
     window.scrollTo({ top: offset, behavior: 'smooth' });
   };
+
+  const handleCustomClick = (onClick) => {
+    setExpanded(false);
+    onClick();
+  };
+
   return (
-    <Navbar bg={mode === "dark" ? "secondary" : "primary"} variant="dark" expand="lg" className='m-0 sticky-top' expanded={expanded} ref={navbarRef}>
+    <Navbar bg={mode === "dark" ? "secondary" : "primary"} variant="dark" expand="lg" className="m-0 sticky-top" expanded={expanded} ref={navbarRef}>
       <Container>
-        <Navbar.Brand className="cursor-pointer fw-bold fs-4" onClick={() => handleLinkClick('home')}>Igor Matlingiewicz</Navbar.Brand>
+        <Navbar.Brand className="cursor-pointer fw-bold fs-4" onClick={() => customNavItems ? handleCustomClick(customNavItems[0].onClick) : handleLinkClick('home')}>Igor Matlingiewicz</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={() => setExpanded(expanded ? false : true)} />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link className={`nav-link-animated ${activeSection === 'home' ? 'active' : ''}`} onClick={() => handleLinkClick('home')}>{content.navbar["home"]}</Nav.Link>
-            <Nav.Link className={`nav-link-animated ${activeSection === 'skills' ? 'active' : ''}`} onClick={() => handleLinkClick('skills')}>{content.navbar["skills"]}</Nav.Link>
-            <Nav.Link className={`nav-link-animated ${activeSection === 'projects' ? 'active' : ''}`} onClick={() => handleLinkClick('projects')}>{content.navbar["projects"]}</Nav.Link>
-            <Nav.Link className={`nav-link-animated ${activeSection === 'contact' ? 'active' : ''}`} onClick={() => handleLinkClick('contact')}>{content.navbar["contact"]}</Nav.Link>
+            {customNavItems ? customNavItems.map((item, i) => (
+              <Nav.Link key={i} className={`nav-link-animated ${item.active ? 'active' : ''}`} onClick={() => handleCustomClick(item.onClick)}>{item.label}</Nav.Link>
+            )) : <>
+              <Nav.Link className={`nav-link-animated ${activeSection === 'home' ? 'active' : ''}`} onClick={() => handleLinkClick('home')}>{content.navbar["home"]}</Nav.Link>
+              <Nav.Link className={`nav-link-animated ${activeSection === 'skills' ? 'active' : ''}`} onClick={() => handleLinkClick('skills')}>{content.navbar["skills"]}</Nav.Link>
+              <Nav.Link className={`nav-link-animated ${activeSection === 'projects' ? 'active' : ''}`} onClick={() => handleLinkClick('projects')}>{content.navbar["projects"]}</Nav.Link>
+              <Nav.Link className={`nav-link-animated ${activeSection === 'contact' ? 'active' : ''}`} onClick={() => handleLinkClick('contact')}>{content.navbar["contact"]}</Nav.Link>
+            </>}
           </Nav>
           <div>
             <Button variant="" size="sm" className={`navbar-btn navbar-icon-btn${introReady ? ' navbar-btn-intro' : ''}`} onClick={() => setMode(mode === "dark" ? "light" : "dark")}>

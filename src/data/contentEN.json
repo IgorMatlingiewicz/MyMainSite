@@ -176,5 +176,55 @@
     "footer": {
         "subtitle": "Web Developer · React & JavaScript",
         "copyright": "All rights reserved"
+    },
+    "dlaFirm": {
+        "nav": {
+            "back": "← Main page",
+            "contact": "Contact"
+        },
+        "hero": {
+            "title": "A website for your business",
+            "subtitle": "Most customers search Google before visiting a business. I'll help you get online - fast, without unnecessary formalities and at a lower price than an agency.",
+            "cta": "Get in touch"
+        },
+        "examples": {
+            "header": "This is what your website could look like",
+            "cards": [
+                {
+                    "style": "Elegant & modern",
+                    "desc": "Dark background, clean lines - great for service companies, clinics, law firms.",
+                    "link": "LINK_DEMO_1"
+                },
+                {
+                    "style": "Bright & friendly",
+                    "desc": "Warm colours, large photos - ideal for restaurants, cafés, shops.",
+                    "link": "LINK_DEMO_2"
+                },
+                {
+                    "style": "Minimalist",
+                    "desc": "Little text, lots of space - suits photographers, architects, freelancers.",
+                    "link": "LINK_DEMO_3"
+                }
+            ],
+            "btn": "See preview"
+        },
+        "why": {
+            "header": "Why choose me?",
+            "items": [
+                { "icon": "fa-solid fa-coins",         "title": "Lower price than agencies",           "desc": "No middlemen or agency mark-ups. Payment in instalments available." },
+                { "icon": "fa-solid fa-bolt",          "title": "Fast turnaround",                     "desc": "Your website ready in about a month. No waiting in a queue." },
+                { "icon": "fa-solid fa-mobile-screen", "title": "Works on mobile",                     "desc": "Most customers browse on their phones - your site will be ready for that." },
+                { "icon": "fa-solid fa-life-ring",     "title": "Full support after launch",           "desc": "I'm here to help after the site goes live - fixes, updates, questions answered." },
+                { "icon": "fa-solid fa-user-tie",      "title": "One person, full accountability",     "desc": "You know who you're talking to from start to finish. No passing the buck." },
+                { "icon": "fa-solid fa-comments",      "title": "Direct communication",                "desc": "No middlemen - you always know what's happening with your site and where we stand." }
+            ]
+        },
+        "contact": {
+            "header": "Let's talk",
+            "subtitle": "Write or call - we'll talk about a potential website for your business.",
+            "phone": "697-327-580",
+            "email": "igor.matlingiewicz@gmail.com",
+            "btn": "Send a message"
+        }
     }
 }

@@ -177,5 +177,55 @@
     "footer": {
         "subtitle": "Web Developer · React & JavaScript",
         "copyright": "Wszelkie prawa zastrzeżone"
+    },
+    "dlaFirm": {
+        "nav": {
+            "back": "← Strona główna",
+            "contact": "Kontakt"
+        },
+        "hero": {
+            "title": "Strona internetowa dla Twojej firmy",
+            "subtitle": "Większość klientów szuka firm w Google zanim do nich trafi. Pomogę Ci zaistnieć online - szybko, bez zbędnych formalności i w cenie niższej niż agencja.",
+            "cta": "Napisz do mnie"
+        },
+        "examples": {
+            "header": "Tak może wyglądać Twoja strona",
+            "cards": [
+                {
+                    "style": "Elegancki i nowoczesny",
+                    "desc": "Ciemne tło, czyste linie - świetny dla firm usługowych, gabinetów, kancelarii.",
+                    "link": "LINK_DEMO_1"
+                },
+                {
+                    "style": "Jasny i przyjazny",
+                    "desc": "Ciepłe kolory, duże zdjęcia - idealny dla restauracji, kawiarni, sklepów.",
+                    "link": "LINK_DEMO_2"
+                },
+                {
+                    "style": "Minimalistyczny",
+                    "desc": "Mało tekstu, dużo przestrzeni - pasuje do fotografów, architektów, freelancerów.",
+                    "link": "LINK_DEMO_3"
+                }
+            ],
+            "btn": "Zobacz podgląd"
+        },
+        "why": {
+            "header": "Dlaczego warto?",
+            "items": [
+                { "icon": "fa-solid fa-coins",         "title": "Niższa cena niż agencje",              "desc": "Bez pośredników i narzutów agencyjnych. Możliwość płatności w ratach." },
+                { "icon": "fa-solid fa-bolt",          "title": "Szybka realizacja",                    "desc": "Strona gotowa w około miesiąc. Bez czekania w kolejce." },
+                { "icon": "fa-solid fa-mobile-screen", "title": "Działa na telefonie",                  "desc": "Większość klientów przegląda internet na mobile - Twoja strona też będzie gotowa." },
+                { "icon": "fa-solid fa-life-ring",     "title": "Pełne wsparcie po wdrożeniu",          "desc": "Służę pomocą po uruchomieniu strony - poprawki, aktualizacje, pytania." },
+                { "icon": "fa-solid fa-user-tie",      "title": "Jedna osoba, pełna odpowiedzialność",  "desc": "Wiesz z kim rozmawiasz od początku do końca. Bez przerzucania odpowiedzialności." },
+                { "icon": "fa-solid fa-comments",      "title": "Bezpośredni kontakt",                  "desc": "Bez pośredników - zawsze wiesz co się dzieje z Twoją stroną i na jakim jesteśmy etapie." }
+            ]
+        },
+        "contact": {
+            "header": "Porozmawiajmy",
+            "subtitle": "Napisz lub zadzwoń - porozmawiamy o potencjalnej stronie dla Twojej firmy.",
+            "phone": "697-327-580",
+            "email": "igor.matlingiewicz@gmail.com",
+            "btn": "Napisz wiadomość"
+        }
     }
 }
