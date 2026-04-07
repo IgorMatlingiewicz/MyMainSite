@@ -213,7 +213,7 @@
             "header": "Dlaczego warto?",
             "items": [
                 { "icon": "fa-solid fa-coins",         "title": "Niższa cena niż agencje",              "desc": "Bez pośredników i narzutów agencyjnych. Możliwość płatności w ratach." },
-                { "icon": "fa-solid fa-bolt",          "title": "Szybka realizacja",                    "desc": "Strona gotowa w około miesiąc. Bez czekania w kolejce." },
+                { "icon": "fa-solid fa-bolt",          "title": "Szybka realizacja",                    "desc": "Strona gotowa w mniej niż miesiąc. Bez czekania w kolejce." },
                 { "icon": "fa-solid fa-mobile-screen", "title": "Działa na telefonie",                  "desc": "Większość klientów przegląda internet na mobile - Twoja strona też będzie gotowa." },
                 { "icon": "fa-solid fa-life-ring",     "title": "Pełne wsparcie po wdrożeniu",          "desc": "Służę pomocą po uruchomieniu strony - poprawki, aktualizacje, pytania." },
                 { "icon": "fa-solid fa-user-tie",      "title": "Jedna osoba, pełna odpowiedzialność",  "desc": "Wiesz z kim rozmawiasz od początku do końca. Bez przerzucania odpowiedzialności." },

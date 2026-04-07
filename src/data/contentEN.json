@@ -212,7 +212,7 @@
             "header": "Why choose me?",
             "items": [
                 { "icon": "fa-solid fa-coins",         "title": "Lower price than agencies",           "desc": "No middlemen or agency mark-ups. Payment in instalments available." },
-                { "icon": "fa-solid fa-bolt",          "title": "Fast turnaround",                     "desc": "Your website ready in about a month. No waiting in a queue." },
+                { "icon": "fa-solid fa-bolt",          "title": "Fast turnaround",                     "desc": "Your website ready in less than a month. No waiting in a queue." },
                 { "icon": "fa-solid fa-mobile-screen", "title": "Works on mobile",                     "desc": "Most customers browse on their phones - your site will be ready for that." },
                 { "icon": "fa-solid fa-life-ring",     "title": "Full support after launch",           "desc": "I'm here to help after the site goes live - fixes, updates, questions answered." },
                 { "icon": "fa-solid fa-user-tie",      "title": "One person, full accountability",     "desc": "You know who you're talking to from start to finish. No passing the buck." },
