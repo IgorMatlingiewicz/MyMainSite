@@ -3,6 +3,9 @@ import { Container, Button, Row, Col, Modal, Form } from 'react-bootstrap';
 
 import AppNavbar from '../components/Navbar';
 import PageSwitcher from '../components/PageSwitcher';
+import ParticleBackground from '../components/ParticleBackground';
+import RipplePattern from '../components/patterns/RipplePattern';
+import GradientBlob from '../components/patterns/GradientBlob';
 import contentPL from '../data/contentPL.json';
 import contentEN from '../data/contentEN.json';
 
@@ -37,6 +40,27 @@ export default function DlaFirmPage({ language, setLanguage, mode, setMode }) {
             url: 'https://themewagon.github.io/carserv/',
         },
     ];
+
+    useEffect(() => {
+        const container = scrollRef.current;
+        if (!container) return;
+        const elements = container.querySelectorAll('[data-df-anim]');
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const delay = Number(entry.target.dataset.dfDelay || 0);
+                        setTimeout(() => entry.target.classList.add('df-anim-visible'), delay);
+                    } else {
+                        entry.target.classList.remove('df-anim-visible');
+                    }
+                });
+            },
+            { root: container, threshold: 0.05, rootMargin: '0px 0px 80px 0px' }
+        );
+        elements.forEach(el => observer.observe(el));
+        return () => observer.disconnect();
+    }, []);
 
     useEffect(() => {
         const contact = document.getElementById('df-contact');
@@ -80,24 +104,28 @@ export default function DlaFirmPage({ language, setLanguage, mode, setMode }) {
 
             {/* Hero */}
             <section className={`${mainBg} py-5`} style={{ position: 'relative', overflow: 'hidden' }}>
+                <ParticleBackground mode={mode} />
                 <Container style={{ position: 'relative', zIndex: 1 }}>
                     <Row className="justify-content-center text-center">
                         <Col lg={8}>
-                            <h1 className="fw-bold mb-4 df-hero-title">{c.hero.title}</h1>
-                            <p className="lead mb-5 opacity-75">{c.hero.subtitle}</p>
+                            <h1 className="fw-bold mb-4 df-hero-title" data-df-anim="fade-up">{c.hero.title}</h1>
+                            <p className="lead mb-5 opacity-75" data-df-anim="fade-up" data-df-delay="100">{c.hero.subtitle}</p>
+                            <div data-df-anim="fade-up" data-df-delay="200">
                             <Button className="btn-accent px-5 py-3 fw-bold fs-5" onClick={scrollToContact}>
                                 {c.hero.cta}
                             </Button>
+                            </div>
                         </Col>
                     </Row>
                 </Container>
             </section>
 
             {/* Przykłady stron */}
-            <section className={`${altBg} py-5`}>
-                <Container>
+            <section className={`${altBg} py-5`} style={{ position: 'relative', overflow: 'hidden' }}>
+                <GradientBlob mode={mode} />
+                <Container style={{ position: 'relative', zIndex: 1 }}>
                     <Row className="mb-4 text-center">
-                        <Col>
+                        <Col data-df-anim="fade-down">
                             <h2 className="section-title text-primary">
                                 {language === 'PL' ? 'Tak może wyglądać strona Twojej firmy' : 'This is how your website could look'}
                             </h2>
@@ -108,7 +136,7 @@ export default function DlaFirmPage({ language, setLanguage, mode, setMode }) {
                     </Row>
                     <Row className="g-4">
                         {examples.map((ex, i) => (
-                            <Col md={4} xs={12} key={i}>
+                            <Col md={4} xs={12} key={i} data-df-anim="fade-up" data-df-delay={i * 100}>
                                 <div
                                     className="df-card h-100"
                                     onClick={() => setPreviewUrl(ex.url)}
@@ -144,14 +172,27 @@ export default function DlaFirmPage({ language, setLanguage, mode, setMode }) {
             </section>
 
             {/* Dlaczego warto */}
-            <section id="df-why" className={`${mainBg} py-5`}>
-                <Container>
+            <section id="df-why" className={`${mainBg} py-5`} style={{ position: 'relative', overflow: 'hidden' }}>
+                {[{ top: 0, left: 0 }, { bottom: 0, right: 0 }].map((pos, i) => (
+                    <div key={i} style={{
+                        position: 'absolute', width: '160px', height: '160px',
+                        pointerEvents: 'none', zIndex: 0, ...pos,
+                        backgroundImage: `repeating-linear-gradient(-45deg, ${isDark ? 'rgba(53,197,190,0.13)' : 'rgba(13,148,136,0.1)'} 0px, ${isDark ? 'rgba(53,197,190,0.13)' : 'rgba(13,148,136,0.1)'} 1px, transparent 1px, transparent 14px)`,
+                        maskImage: i === 0
+                            ? 'radial-gradient(ellipse at top left, black 30%, transparent 75%)'
+                            : 'radial-gradient(ellipse at bottom right, black 30%, transparent 75%)',
+                        WebkitMaskImage: i === 0
+                            ? 'radial-gradient(ellipse at top left, black 30%, transparent 75%)'
+                            : 'radial-gradient(ellipse at bottom right, black 30%, transparent 75%)',
+                    }} />
+                ))}
+                <Container style={{ position: 'relative', zIndex: 1 }}>
                     <Row className="mb-4">
-                        <Col><h2 className="section-title text-primary">{c.why.header}</h2></Col>
+                        <Col data-df-anim="fade-down"><h2 className="section-title text-primary">{c.why.header}</h2></Col>
                     </Row>
                     <Row className="g-4">
                         {c.why.items.map((item, i) => (
-                            <Col md={6} xs={12} key={i}>
+                            <Col md={6} xs={12} key={i} data-df-anim="fade-up" data-df-delay={i * 80}>
                                 <div className="df-why-item d-flex gap-4 align-items-start">
                                     <div className="df-why-icon flex-shrink-0">
                                         <i className={item.icon}></i>
@@ -168,13 +209,14 @@ export default function DlaFirmPage({ language, setLanguage, mode, setMode }) {
             </section>
 
             {/* Kontakt */}
-            <section id="df-contact" className={`${altBg} py-5`}>
-                <Container>
+            <section id="df-contact" className={`${altBg} py-5`} style={{ position: 'relative', overflow: 'hidden' }}>
+                <RipplePattern mode={mode} />
+                <Container style={{ position: 'relative', zIndex: 1 }}>
                     <Row className="mb-4">
-                        <Col><h2 className="section-title text-primary">{c.contact.header}</h2></Col>
+                        <Col data-df-anim="fade-down"><h2 className="section-title text-primary">{c.contact.header}</h2></Col>
                     </Row>
                     <Row className="g-5">
-                        <Col md={4} xs={12}>
+                        <Col md={4} xs={12} data-df-anim="fade-right">
                             <p className="lead mb-4">{c.contact.subtitle}</p>
                             <div className="d-flex align-items-center gap-3 mb-3">
                                 <i className="fa-solid fa-phone fs-4" style={{ color: 'var(--accent)' }}></i>
@@ -189,7 +231,7 @@ export default function DlaFirmPage({ language, setLanguage, mode, setMode }) {
                                 </a>
                             </div>
                         </Col>
-                        <Col md={8} xs={12}>
+                        <Col md={8} xs={12} data-df-anim="fade-left">
                             <form name="contact-df" method="POST" data-netlify="true" netlify-honeypot="bot-field" onSubmit={handleSubmit}>
                                 <input type="hidden" name="form-name" value="contact-df" />
                                 <p hidden><label>Don't fill this out: <input name="bot-field" /></label></p>

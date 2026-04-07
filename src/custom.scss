@@ -363,6 +363,20 @@ $dark: #1a1d23;
   &:hover { background: rgba(255,255,255,0.04); }
 }
 
+// DlaFirm scroll animations (własny system zamiast AOS — AOS nie działa ze scroll containerem)
+[data-df-anim] {
+  opacity: 0;
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+[data-df-anim="fade-up"]    { transform: translateY(24px); }
+[data-df-anim="fade-down"]  { transform: translateY(-24px); }
+[data-df-anim="fade-right"] { transform: translateX(-24px); }
+[data-df-anim="fade-left"]  { transform: translateX(24px); }
+[data-df-anim].df-anim-visible {
+  opacity: 1;
+  transform: none;
+}
+
 .df-why-icon {
   width: 3rem;
   height: 3rem;
